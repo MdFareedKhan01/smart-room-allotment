@@ -4,11 +4,13 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 dotenv.config();
-
+console.log("ENV VALUE:", process.env.MONGO_URI);
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+
 
 app.get("/", (req, res) => {
   res.send("API Running");
