@@ -3,6 +3,11 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 
+const itemSchema = new mongoose.Schema({
+  value: Number
+});
+const Item = mongoose.model("Item", itemSchema);
+
 dotenv.config();
 
 const app = express();
@@ -19,10 +24,23 @@ mongoose.connect(process.env.MONGO_URI)
   })
   .catch(err => console.log(err));
 
-let items=["fareed", "Rehan","farhan","faiqa"];
+app.get("/add-test", async (req, res) => {
+  await Item.insertMany([
+    { value: 1 },
+    { value: 2 },
+    { value: 3 },
+    { value: 4 }
+  ]);
+  res.send("Test items added");
+});
 
-app.get("/", (req, res) => {
-  res.json(items);
+app.get("/", async (req, res) => {
+  try {
+    const items = await Item.find();
+    res.json(items);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 });
 
 

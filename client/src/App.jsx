@@ -22,7 +22,11 @@ function App() {
       <h1>OUR TEAM</h1>
       <p className="x"> hello </p>
       <ul>
-        {items.map((item, index) => <li key={index}>{item}</li>)}
+        {items.map(item => (
+          <li key={item._id}>
+            {item.value}
+          </li>
+        ))}
       </ul>
     </div>
   );
