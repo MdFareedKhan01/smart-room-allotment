@@ -1,8 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import '../App.css'
 
 function Home() {
+  const navigate = useNavigate();
   const [items, setItems]=useState([]);
 
   
@@ -26,6 +28,9 @@ function Home() {
       <ul>
         {items.map((item, index) => <li key={index}>{item}</li>)}
       </ul>
+      <button onClick={() => navigate("/Personality")}>
+        Start Test
+      </button>
     </div>
   );
 
