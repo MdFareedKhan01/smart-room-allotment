@@ -16,28 +16,29 @@ body {
 }
 
 /* Navbar */
-.navbar {
+.navbar-home {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 60px;
     background: white;
+    border-bottom:2px solid;
+    border-bottom-color: grey;
 }
 
-.logo {
+.logo-home {
     font-weight: bold;
     font-size: 20px;
-    color: #7a63b6;
     color: #64C34B;
 }
 
-.nav-links {
+.nav-links-home {
     display: flex;
     align-items: center;
     gap: 25px;
 }
 
-.nav-links a {
+.nav-links-home a {
     text-decoration: none;
     color: #555;
     font-size: 14px;
@@ -45,7 +46,6 @@ body {
 
 /* Buttons */
 .signup {
-    background-color: #7a63b6;
     background-color: #64C34B;
     color: white;
     border: none;
@@ -93,7 +93,7 @@ body {
     gap: 15px;
 }
 
-.primary-btn {
+.primary-btn-home {
     background-color: #7a63b6;
     background-color: #64C34B;
     color: white;

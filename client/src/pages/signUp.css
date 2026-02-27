@@ -1,0 +1,175 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.bodyparent {
+  background: #f5f6fa;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar-home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 100px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.logo-home {
+  font-size: 26px;
+  font-weight: 600;
+  color: #2e7d32; /* Green */
+}
+
+.nav-links-home {
+  display: flex;
+  align-items: center;
+}
+
+.primary-btn-home {
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-right: 15px;
+  background: #2e7d32; /* Green */
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.primary-btn-home:hover {
+  background: #1b5e20; /* Darker Green */
+}
+
+.nav-links-home img {
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Center Container */
+.container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.card {
+  background: #fff;
+  padding: 60px;
+  width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+/* Headings and Paragraphs */
+.card h2 {
+  color: #2e7d32; /* Green */
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #388e3c; /* Slightly lighter green */
+  margin-bottom: 20px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  background: #c8e6c9; /* Light Green */
+  border-radius: 8px;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background: #a5d6a7; /* Medium Green */
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.tabs button:hover {
+  background: #81c784; /* Hover Green */
+}
+
+.tabs .active {
+  background: #fff;
+  font-weight: 700;
+}
+
+/* Input Groups */
+.input-group {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  transition: border 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #2e7d32; /* Green Focus */
+  outline: none;
+}
+
+/* Password Toggle */
+.password-toggle {
+  position: relative;
+}
+
+.toggle-btn {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #2e7d32; /* Green */
+  transition: color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  color: #1b5e20; /* Darker Green */
+}
+
+/* Primary Button */
+.primary-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #2e7d32; /* Green */
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+.primary-btn:hover {
+  background: #1b5e20; /* Darker Green */
+}
+
+/* Error Message */
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}

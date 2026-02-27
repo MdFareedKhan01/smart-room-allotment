@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import "./login.css";
+import "./signUp.css";
 
-function Login() {
+function SignUp() {
   const navigate = useNavigate();
 
   return (
@@ -24,21 +24,17 @@ function Login() {
 
       <div className="container">
         <div className="card">
-          <h2>Welcome to SmartMate</h2>
-          <p>Sign in to find your perfect roommate match</p>
+          <h2>Create Your Account</h2>
+          <p>Sign up to find your perfect roommate match</p>
 
           <div className="tabs">
-            <button id="loginTab" className="active" onClick={() => navigate("/Login")}>Login</button>
-            <button id="signupTab" onClick={() => navigate("/SignUp")}>Sign Up</button>
+            <button id="loginTab" onClick={() => navigate("/Login")}>Login</button>
+            <button id="signupTab" className="active" onClick={() => navigate("/SignUp")}>Sign Up</button>
           </div>
 
           <form id="authForm">
-            <div
-              className="input-group"
-              id="nameField"
-              style={{ display: "none" }}
-            >
-              <input type="text" id="name" placeholder="Name" />
+            <div className="input-group">
+              <input type="text" id="name" placeholder="Name" required />
             </div>
 
             <div className="input-group">
@@ -55,6 +51,16 @@ function Login() {
               <span className="toggle-btn">Show</span>
             </div>
 
+            <div className="input-group password-toggle">
+              <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm Password"
+                required
+              />
+              <span className="toggle-btn">Show</span>
+            </div>
+
             <div className="error" id="errorMsg"></div>
 
             <button
@@ -62,7 +68,7 @@ function Login() {
               className="primary-btn"
               id="submitBtn"
             >
-              Login
+              Sign Up
             </button>
           </form>
         </div>
@@ -71,4 +77,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default SignUp;

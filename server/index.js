@@ -50,6 +50,18 @@ app.get("/Personality", (req, res) => {
 });
 
 
+app.get("/Login", (req, res) => {
+  res.json(" ");
+  console.log("enteredLogin");
+});
+
+app.get("/SignUp", (req, res) => {
+  res.json(" ");
+  console.log("enteredSignUp");
+});
+
+
+
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
