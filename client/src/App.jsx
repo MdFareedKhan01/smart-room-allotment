@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import './App.css'
 
 function App() {
   const [items, setItems]=useState([]);
@@ -19,6 +20,7 @@ function App() {
   return (
     <div>
       <h1>OUR TEAM</h1>
+      <p className="x"> hello </p>
       <ul>
         {items.map((item, index) => <li key={index}>{item}</li>)}
       </ul>
