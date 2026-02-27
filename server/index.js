@@ -19,6 +19,9 @@ mongoose.connect(process.env.MONGO_URI)
   })
   .catch(err => console.log(err));
 
+let Item=["fareed", "faiqa","Rehan"];
+
+
 app.get("/", async (req, res) => {
   try {
     const items = await Item.find();
