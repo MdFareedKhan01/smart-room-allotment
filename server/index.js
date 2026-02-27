@@ -19,7 +19,7 @@ mongoose.connect(process.env.MONGO_URI)
   })
   .catch(err => console.log(err));
 
-let items=["fareed", "Rehan","faizan"];
+let items=["fareed", "Rehan","faizan","faiqa"];
 
 app.get("/", (req, res) => {
   res.json(items);
