@@ -19,10 +19,13 @@ mongoose.connect(process.env.MONGO_URI)
   })
   .catch(err => console.log(err));
 
-let items=["fareed", "Rehan","farhan","faiqa"];
-
-app.get("/", (req, res) => {
-  res.json(items);
+app.get("/", async (req, res) => {
+  try {
+    const items = await Item.find();
+    res.json(items);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 });
 
 
