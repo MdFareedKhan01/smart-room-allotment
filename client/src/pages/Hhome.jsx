@@ -46,7 +46,56 @@ function Home() {
                  alt="profile card" />
         </div>
     </section>
+    <section class="steps">
+    <h2>4 Steps to Your Perfect Flatmate</h2>
+    <div class="step">
+        <div class="step-number">01</div>
+        <div class="step-content">
+            <h3>Create Your Profile</h3>
+            <p>
+                Sign up for free and tell us about yourself: your lifestyle, schedule,
+                cleanliness preferences, social habits, and what you're looking for
+                in a flatmate.
+            </p>
 
+            <div class="tags">
+                <span>Set your budget range</span>
+                <span>Answer personality questions</span>
+                <span>Upload verified photo</span>
+                <span>Describe ideal living situation</span>
+            </div>
+        </div>
+    </div>
+    <div class="step">
+        <div class="step-number">02</div>
+        <div class="step-content">
+            <h3>Smart Matching</h3>
+            <p>
+                Our algorithm analyzes compatibility factors to find flatmates
+                you'll actually enjoy living with.
+            </p>
+
+            <div class="tags">
+                <span>Personality compatibility</span>
+                <span>Schedule alignment</span>
+                <span>Budget matching</span>
+                <span>Language preferences</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">03</div>
+        <div class="step-content">
+            <h3>Connect & Chat</h3>
+            <p>
+                Browse matches, see compatibility scores, and start chatting
+                with potential flatmates through secure messaging.
+            </p>
+        </div>
+    </div>
+
+</section>
     <footer className="footer">
         <div className="footer-container">
 

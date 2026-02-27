@@ -9,6 +9,7 @@
 /* Page Wrapper */
 .bodyparent {
   background: #f5f6fa;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -67,13 +68,26 @@
 
 /* Center Container */
 .container {
+  position: relative;              /* allow layering */
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 10px;
+  overflow: hidden;              /* hide blur edges */
 }
 
+/* blurred background layer */
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;                        /* cover entire container */
+  background-image: url("/image.png");
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);               /* blur strength */
+  transform: scale(1.1);           /* avoid sharp edges */                  /* keep behind content */
+}
 .card {
   background: #fff;
   padding: 60px;
@@ -81,6 +95,7 @@
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
   text-align: center;
+  z-index: +1;
 }
 
 /* Tabs */

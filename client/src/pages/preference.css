@@ -1,0 +1,85 @@
+.pref-body {
+  background: #f5f6fa;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pref-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  width: 70%;
+  text-align: center;
+}
+.pref-block h4 {
+  font-size: 20px;       /* ✅ larger text */
+  font-weight: 600;      /* ✅ bold */
+  color: #2e7d32;        /* ✅ green theme */
+  margin-bottom: 12px;   /* ✅ more spacing below */
+}
+
+.pref-card h2 {
+  color: #2e7d32; /* ✅ Green heading */
+  margin-bottom: 10px;
+}
+
+.pref-card p {
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.pref-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pref-block h4 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.pref-options {
+  display: flex;
+  justify-content: space-around;
+}
+
+.pref-options button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid #2e7d32; /* ✅ Green border */
+  background: #fff;
+  color: #2e7d32;             /* ✅ Green text */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pref-options button:hover {
+  background: #c8e6c9;        /* ✅ Light green hover */
+}
+
+.pref-options .active {
+  background: #2e7d32;        /* ✅ Active green */
+  color: #fff;
+}
+
+.pref-submit {
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #2e7d32;        /* ✅ Green submit */
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.pref-submit:hover {
+  background: #1b5e20;        /* ✅ Darker green hover */
+  transform: scale(1.05);
+}

@@ -22,7 +22,7 @@ function Login() {
         </div>
       </nav>
 
-      <div className="container">
+      <div className="container" >
         <div className="card">
           <h2>Welcome to SmartMate</h2>
           <p>Sign in to find your perfect roommate match</p>
@@ -61,6 +61,7 @@ function Login() {
               type="submit"
               className="primary-btn"
               id="submitBtn"
+              onClick={() => navigate("/Mid")}
             >
               Login
             </button>

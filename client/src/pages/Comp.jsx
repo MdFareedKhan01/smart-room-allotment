@@ -1,3 +1,6 @@
+import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 function calculateMBTI(answers) {
   const EI = answers.slice(0,4).reduce((a,b)=>a+b,0);
   const SN = answers.slice(4,8).reduce((a,b)=>a+b,0);
@@ -30,12 +33,27 @@ function compatibility(a, b) {
   );
 }
 
+
+function Comp(){
+    const navigate = useNavigate();
+    const location = useLocation();
+  const answers = location.state?.answers || [];
 const f = calculateMBTI(answersFareed);
 const q = calculateMBTI(answersFarhan);
 const r = calculateMBTI(answersRehan);
 const y = calculateMBTI(answersYusuf);
+const user=calculateMBTI(answers);
+    return (
+    <div>
+      <h2>Compatiblity</h2>
+      <p> with fareed : {compatibility(f,user)}</p>
+      <p> with Rehan : {compatibility(q,user)}</p>
+      <p> with Yusuf : {compatibility(r,user)}</p>
+      <p> with Farhan : {compatibility(y,user)}</p>
 
+      <button className="primary-btn-home" onClick={() => navigate("/Preference")}> now ....</button>
+    </div>
+  );
+}
 
-console.log(compatibility(y,r));
-console.log(compatibility(y,f));
-console.log(compatibility(y,q));
+export default Comp;

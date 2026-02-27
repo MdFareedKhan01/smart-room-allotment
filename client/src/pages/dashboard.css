@@ -1,0 +1,40 @@
+.dash-body {
+  background: #f5f6fa;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dash-card {
+  background: #fff;
+  padding: 50px;
+  width: 900px; /* wide dashboard */
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.dash-card h2 {
+  color: #2e7d32; /* ✅ green theme */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.dash-section {
+  margin-bottom: 25px;
+}
+
+.dash-section h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2e7d32;
+  margin-bottom: 10px;
+  border-left: 4px solid #2e7d32;
+  padding-left: 8px;
+}
+
+.dash-section p,
+.dash-section li {
+  color: #333;
+  margin-bottom: 6px;
+}

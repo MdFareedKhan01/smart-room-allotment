@@ -56,11 +56,25 @@
 
 /* Center Container */
 .container {
+  position: relative;              /* allow layering */
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 10px;
+  overflow: hidden;              /* hide blur edges */
+}
+
+/* blurred background layer */
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;                        /* cover entire container */
+  background-image: url("/image.png");
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);               /* blur strength */
+  transform: scale(1.1);           /* avoid sharp edges */                  /* keep behind content */
 }
 
 .card {
@@ -97,7 +111,7 @@
   flex: 1;
   padding: 12px;
   border: none;
-  background: #a5d6a7; /* Medium Green */
+  background: #ffff; /* Medium Green */
   cursor: pointer;
   transition: background 0.3s ease;
 }

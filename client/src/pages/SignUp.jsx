@@ -67,6 +67,7 @@ function SignUp() {
               type="submit"
               className="primary-btn"
               id="submitBtn"
+              onClick={() => navigate("/Login")}
             >
               Sign Up
             </button>

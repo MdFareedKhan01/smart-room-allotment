@@ -16,88 +16,33 @@ body {
 }
 
 /* Navbar */
-.navbar-home {
+.navbar {
+    border-bottom: 2px solid #e8e6e6;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 60px;
     background: white;
-    border-bottom:2px solid;
-    border-bottom-color: grey;
 }
 
-.logo-home {
+.logo {
     font-weight: bold;
     font-size: 20px;
     color: #64C34B;
 }
 
-.nav-links-home {
+.nav-links {
     display: flex;
     align-items: center;
     gap: 25px;
 }
 
-.nav-links-home a {
+.nav-links a {
     text-decoration: none;
     color: #555;
     font-size: 14px;
 }
-.steps {
-    padding: 80px 10%;
-    background-color: #f6f4f9;
-}
 
-.steps h2 {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 60px;
-}
-
-.step {
-    display: flex;
-    gap: 30px;
-    margin-bottom: 50px;
-}
-
-.step-number {
-    min-width: 60px;
-    height: 60px;
-    background-color: #e9e9ff;
-    /* color: #6c63ff; */
-    color: #64C34B;
-    font-weight: bold;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 15px;
-}
-
-.step-content h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-}
-
-.step-content p {
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.tags span {
-    background-color: #e9e9ff;
-    color: #555;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 14px;
-}
 /* Buttons */
 .signup {
     background-color: #64C34B;
@@ -118,25 +63,29 @@ body {
 
 /* Hero Section */
 .hero {
-    flex: 1;
+    /* flex: 1; */
+    background-color: #FDFBD4;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 80px 100px;
 }
 
-.hero-left {
+.hero-up {
     max-width: 500px;
+    border: 2px solid #d4d074;
+    border-radius: 10px;
+    padding: 10px;
 }
 
-.hero-left h1 {
+.hero-up h1 {
     font-size: 48px;
-    color: #7a63b6;
     color: #64C34B;
     margin-bottom: 20px;
 }
 
-.hero-left p {
+.hero-up p {
     color: #666;
     line-height: 1.6;
     margin-bottom: 30px;
@@ -147,8 +96,7 @@ body {
     gap: 15px;
 }
 
-.primary-btn-home {
-    background-color: #7a63b6;
+.primary-btn {
     background-color: #64C34B;
     color: white;
     border: none;
