@@ -1,13 +1,30 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [items, setItems]=useState([]);
   useEffect(() => {
-    axios.get("http://localhost:5000/")
-      .then(res => console.log(res.data));
+    const fetchItems = async () => {
+    try {
+      const response = await axios.get('http://localhost:5000/');
+      setItems(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  fetchItems();
   }, []);
 
-  return <h1>Smart Room Allotment</h1>;
+  return (
+    <div>
+      <h1>OUR TEAM</h1>
+      <ul>
+        {items.map((item, index) => <li key={index}>{item}</li>)}
+      </ul>
+    </div>
+  );
+
 }
 
 export default App;
