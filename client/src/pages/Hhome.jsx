@@ -28,7 +28,7 @@ function Home() {
 
         <div class="nav-links">
             <button className="primary-btn" onClick={() => navigate("/signup")}>  Sign Up</button>
-            <button className="primary-btn" onClick={() => navigate("/loign")}>  login</button>
+            <button className="primary-btn" onClick={() => navigate("/login")}>  login</button>
             <img src="https://jmicoe.in/images/jmi-logo.jpg"
                      alt="profile card" />
         </div>
@@ -42,7 +42,7 @@ function Home() {
 
             <div class="hero-buttons">
                 <button className="primary-btn" onClick={() => navigate("/Personality")}>  Sign Up</button>
-                <button className="primary-btn" onClick={() => navigate("/loign")}>  login</button>
+                <button className="primary-btn" onClick={() => navigate("/login")}>  login</button>
 
             </div>
         </div>
