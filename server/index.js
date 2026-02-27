@@ -6,13 +6,9 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-
+const PORT=5000;
 app.use(cors());
 app.use(express.json());
-
-app.get("/", (req, res) => {
-  res.send("API Running");
-});
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
@@ -23,3 +19,13 @@ mongoose.connect(process.env.MONGO_URI)
   })
   .catch(err => console.log(err));
 
+let items=["fareed", "Rehan","faizan"];
+
+app.get("/", (req, res) => {
+  res.json(items);
+});
+
+
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
