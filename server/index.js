@@ -149,7 +149,8 @@ app.get("/best-match/:id", async (req, res) => {
       return res.status(404).json({ message: "Student not found" });
     }
     const allStudents = await Student.find({
-      _id: { $ne: currentStudent._id }
+      _id: { $ne: currentStudent._id },
+      roomAssigned: false
     });
     if (allStudents.length === 0) {
       return res.json({ message: "No other students available" });
@@ -182,6 +183,26 @@ app.get("/best-match/:id", async (req, res) => {
         100-(bestMatch.compScore/64)*100
       )
     });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.post("/confirm-room", async (req, res) => {
+  const { student1Id, student2Id } = req.body;
+  console.log(student2Id);
+  try {
+    const newRoom = await Room.create({
+      roomNumber: Math.floor(Math.random() * 1000),
+      students: [student1Id, student2Id]
+    });
+    await Student.findByIdAndUpdate(student1Id, {
+      roomAssigned: true
+    });
+    await Student.findByIdAndUpdate(student2Id, {
+      roomAssigned: true
+    });
+    res.json(newRoom);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

@@ -54,7 +54,13 @@ const studentSchema = new mongoose.Schema({
   preferences: {
     type: preferenceSchema,
     default: () => ({})
-  }
+  },
+
+  roomAssigned: {
+  type: Boolean,
+  default: false
+}
+  
 
 }, { timestamps: true });
 

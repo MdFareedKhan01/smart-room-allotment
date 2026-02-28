@@ -1,10 +1,12 @@
-{
-    isLoggedIn?(
-        <div></div>
-    ):(
-        <button className="alt-btn-home" onClick={() => {
-                localStorage.removeItem("studentId");
-                navigate("/");
-            }}>Logout</button>
-    )
-}
+<div>
+      <div>
+        <h2>Your Best Match</h2>
+        <h3>{matchData.match.name}</h3>
+        <p>Compatibility: {matchData.compatibilityPercent}%</p>
+        <p>Preference Match: {matchData.preferenceMatchScore}/5</p>
+        <p>Personality: {matchData.match.personalityType}</p>
+      </div>
+      <button onClick={handleConfirmRoom}>
+          Confirm Roommate
+      </button>
+    </div>
