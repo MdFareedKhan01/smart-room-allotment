@@ -16,6 +16,17 @@ function Home() {
     }
   }, []);
 
+const handleShowRooms = () => {
+  const key = prompt("Enter admin key:");
+
+  if (key === "HOSTEL2026") {
+    localStorage.setItem("roomAccess", "true");
+    navigate("/rooms");
+  } else {
+    alert("Wrong key");
+  }
+};
+
   return (
     <div class>
     <nav className="navbar-home">
@@ -82,8 +93,11 @@ function Home() {
                 Take the test
             </button>
             <button className="primary-btn-home" onClick={() => navigate("/best-match")}>
-          Find Your Best Match
-        </button>
+                Find Your Best Match
+            </button>
+            <button onClick={handleShowRooms}>
+                Show Hostel Rooms
+            </button>
         </div>
       )}
     

@@ -8,6 +8,7 @@ import Preference from "./pages/Preference";
 import Dashboard from "./pages/Dashboard";
 import Mid from "./pages/Mid";
 import BestMatch from "./pages/BestMatch";
+import Rooms from "./pages/Rooms";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/Mid" element={<Mid />} />
         <Route path="/best-match" element={<BestMatch />} />
+        <Route path="/rooms" element={<Rooms />} />
       </Routes>
   );
 }
