@@ -82,7 +82,7 @@ function Mid() {
 
         <div style={{ display: "flex", justifyContent: "center", gap: "45px" }}>
           <div className="prev-mid-hero-up">
-            <h1>Discover Your Personality</h1>
+            <h1>Discover Your Own Personality</h1>
             <p>
               Answer a short set of questions to understand your preferences, strengths, and compatibility. 
               This helps us allocate rooms where you’ll feel comfortable and thrive during your stay.
