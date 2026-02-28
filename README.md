@@ -1,4 +1,4 @@
-# Smart Room Allotment System
+# RoomEngine
 
 An intelligent hostel room allocation system that assigns roommates based on personality compatibility and lifestyle preferences.
 
@@ -207,4 +207,4 @@ npm run dev
 
 ##  Conclusion
 
-Smart Room Allotment combines psychology and technology to create harmonious hostel living environments using compatibility-driven matching.
+RoomEngine combines psychology and technology to create harmonious hostel living environments using compatibility-driven matching.
