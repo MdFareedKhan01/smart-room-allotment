@@ -8,9 +8,10 @@
 
 /* Page Wrapper */
 .bodyparent {
-  background: radial-gradient(circle at 20% 30%, #bbf7d0 0%, #e0f2fe 35%, #f1f5f9 70%);
+  background: #0f172a;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   min-height: 100vh;
   position: relative;
