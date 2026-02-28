@@ -208,6 +208,17 @@ app.post("/confirm-room", async (req, res) => {
   }
 });
 
+app.get("/all-rooms", async (req, res) => {
+  try {
+    const rooms = await Room.find()
+      .populate("students", "name personalityType");
+
+    res.json(rooms);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
