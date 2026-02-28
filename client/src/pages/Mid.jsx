@@ -1,13 +1,22 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import './mid.css';
 
 function Mid() {
   const navigate = useNavigate();
+
+  // Initialize step from localStorage, default to 1
   const [step, setStep] = useState(() => {
-  return parseInt(localStorage.getItem("step")) || 1;
-});
+    return parseInt(localStorage.getItem("step")) || 1;
+  });
+
+  // Reset step to 1 when Mid mounts (new user login scenario)
+  useEffect(() => {
+    if (!localStorage.getItem("step")) {
+      setStep(1);
+      localStorage.setItem("step", "1");
+    }
+  }, []);
 
   return (
     <div>
@@ -16,7 +25,12 @@ function Mid() {
         <div className="nav-links-home">
           <button
             className="primary-btn-home"
-            onClick={() => navigate("/")}
+            onClick={() => {
+              // Reset step when user clicks Home (new login)
+              setStep(1);
+              localStorage.setItem("step", "1");
+              navigate("/");
+            }}
           >
             Home
           </button>
@@ -28,8 +42,8 @@ function Mid() {
       </nav>
 
       <section className="prev-mid-hero">
-        <h1 style={{ color: "#64C34B", fontSize: "48px", marginBottom: "20px" }}>
-          Welcome!!
+        <h1 style={{ color: "#22c55e", fontSize: "42px", marginBottom: "20px" }}>
+          Welcome to Smart Room Allocation
         </h1>
 
         {/* Step Indicator */}
@@ -48,30 +62,39 @@ function Mid() {
 
         <div style={{ display: "flex", justifyContent: "center", gap: "45px" }}>
           <div className="prev-mid-hero-up">
-            <h1>Take your personality test</h1>
-            <p>sign up and opt for room allocation</p>
-            <button
-  type="button"
-  className="primary-btn"
-  onClick={() => {
-    setStep(2);
-    localStorage.setItem("step", "2");
-    navigate("/Personality");
-  }}
->
-  Personality
-</button>
-
-          </div>
-          <div className="prev-mid-hero-up">
-            <h1>Select Your Preferences</h1>
-            <p>sign up and opt for room allocation</p>
+            <h1>Discover Your Personality</h1>
+            <p>
+              Answer a short set of questions to understand your preferences, strengths, and compatibility. 
+              This helps us allocate rooms where you’ll feel comfortable and thrive during your stay.
+            </p>
             <button
               type="button"
               className="primary-btn"
-              onClick={() => navigate("/Preference")}
+              onClick={() => {
+                setStep(2);
+                localStorage.setItem("step", "2");
+                navigate("/Personality");
+              }}
             >
-              Preference
+              Start Personality Test
+            </button>
+          </div>
+          <div className="prev-mid-hero-up">
+            <h1>Select Your Room Preferences</h1>
+            <p>
+              Choose your preferred room type, food preferences, studytime preferences, music ones , amenities, and lifestyle options. 
+              We’ll match these with your personality profile to suggest the best fit for you.
+            </p>
+            <button
+              type="button"
+              className="primary-btn"
+              onClick={() => {
+                setStep(2);
+                localStorage.setItem("step", "2");
+                navigate("/Preference");
+              }}
+            >
+              Set Preferences
             </button>
           </div>
         </div>
@@ -80,45 +103,49 @@ function Mid() {
       <footer className="footer">
         <div className="footer-container">
 
-            <div className="footer-column">
-                <h3>Stay Connected</h3>
-                <div className="social-icons">
-                    <a href="#">Facebook</a>
-                    <a href="#">YouTube</a>
-                </div>
-                <p>Jamia Millia Islamia</p>
+          <div className="footer-column">
+            <h3>Stay Connected</h3>
+            <div className="social-icons">
+              <a href="#">Facebook</a>
+              <a href="#">YouTube</a>
             </div>
+            <p>Jamia Millia Islamia</p>
+          </div>
 
-            <div className="footer-column">
-                <h3>Navigate JMI</h3>
-                <ul>
-                    <li><a href="#">jmi.ac.in</a></li>
-                    <li><a href="#">Courses</a></li>
-                    <li><a href="#">Guidelines for Filling</a></li>
-                </ul>
-            </div>
+          <div className="footer-column">
+            <h3>Navigate JMI</h3>
+            <ul>
+              <li><a href="#">jmi.ac.in</a></li>
+              <li><a href="#">Courses</a></li>
+              <li><a href="#">Hostel Guidelines</a></li>
+              <li><a href="#">Campus Map</a></li>
+            </ul>
+          </div>
 
-            <div className="footer-column">
-                <h3>Find out more</h3>
-                <ul>
-                    <li><a href="#">Old Question paper-All</a></li>
-                    <li><a href="#">Payment method</a></li>
-                </ul>
-            </div>
+          <div className="footer-column">
+            <h3>Find out more</h3>
+            <ul>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Old Question Papers</a></li>
+              <li><a href="#">Payment Methods</a></li>
+            </ul>
+          </div>
 
-            <div className="footer-column">
-                <h3>Important links</h3>
-                <ul>
-                    <li><a href="#">Admin</a></li>
-                </ul>
-            </div>
+          <div className="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#">Apply Now</a></li>
+              <li><a href="#">Check Allocation Status</a></li>
+              <li><a href="#">Admin</a></li>
+            </ul>
+          </div>
 
         </div>
 
         <div className="footer-bottom">
-            © 2017 All Rights Reserved Jamia Millia Islamia.
+          © 2026 All Rights Reserved Jamia Millia Islamia.
         </div>
-    </footer>
+      </footer>
     </div>
   );
 }
