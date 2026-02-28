@@ -53,6 +53,7 @@ function Personality() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (groupIndex !== 3) return;
     if (answers.includes(null)) {
     alert("Please answer all questions");
     return;
