@@ -126,6 +126,20 @@ app.post("/submit-preferences", async (req, res) => {
     res.status(400).json({ error: err.message });
   }
 });
+app.get("/student/:id", async (req, res) => {
+  try {
+    const student = await Student.findById(req.params.id);
+
+    if (!student) {
+      return res.status(404).json({ message: "Student not found" });
+    }
+
+    res.json(student);
+
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
 
 
 app.listen(PORT, () => {

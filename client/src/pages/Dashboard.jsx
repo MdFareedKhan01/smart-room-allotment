@@ -1,19 +1,40 @@
 import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import "./dashboard.css";
 
 function Dashboard() {
-  const location = useLocation();
+  const [student, setStudent] = useState(null);
 
-  // Data passed from Login, Personality, Preference
-  const name = location.state?.name || "Guest";
-  const id = location.state?.id || "N/A";
-  const personality = location.state?.personality || null;
-  const preferences = location.state?.preferences || {};
+  useEffect(() => {
+    const fetchStudent = async () => {
+      const studentId = localStorage.getItem("studentId");
+      if (!studentId) {
+        console.log("No student ID found");
+        return;
+      }
+      try {
+        const response = await axios.get(
+          `http://localhost:5000/student/${studentId}`
+        );
+        setStudent(response.data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetchStudent();
+  }, []);
+  if (!student) return <div>Loading...</div>;
 
-  // Character sketch generator
+  const name = student.name || "Guest";
+  const personality = student.personalityType || null;
+  const personalityScores = student.personalityScores || null;
+  const preferences = student.preferences || {};
+  const email = student.email || "none";
+
   const generateSketch = () => {
     if (!personality) return "No personality data available.";
-    const { type } = personality;
+    const type  = personality;
     let sketch = `Based on your MBTI type (${type}), you are `;
     switch(type) {
       case "ENTJ":
@@ -29,7 +50,6 @@ function Dashboard() {
         sketch += "balanced in your traits, showing flexibility and adaptability across situations.";
     }
 
-    // Add flavor from preferences
     if (preferences.food) {
       sketch += ` You prefer ${preferences.food} food,`;
     }
@@ -51,17 +71,24 @@ function Dashboard() {
         <section className="dash-section">
           <h3>User Info</h3>
           <p><strong>Name:</strong> {name}</p>
-          <p><strong>ID:</strong> {id}</p>
+          <p><strong>Email:</strong> {email}</p>
         </section>
 
         <section className="dash-section">
           <h3>Personality Results</h3>
           {personality ? (
             <>
-              <p><strong>Type:</strong> {personality.type}</p>
+              <p><strong>Type:</strong> {personality}</p>
               <p>
-                Scores: EI={personality.scores.EI}, SN={personality.scores.SN}, 
-                TF={personality.scores.TF}, JP={personality.scores.JP}
+                <b>Scores</b>:-
+                <br></br> 
+                <b>EI</b>={personalityScores[0]}
+                <br></br> 
+                <b>SN</b>={personalityScores[1]}
+                <br></br> 
+                <b>TF</b>={personalityScores[2]}
+                <br></br> 
+                <b>JP</b>={personalityScores[3]}
               </p>
             </>
           ) : (

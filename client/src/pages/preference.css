@@ -16,14 +16,14 @@
   text-align: center;
 }
 .pref-block h4 {
-  font-size: 20px;       /* ✅ larger text */
-  font-weight: 600;      /* ✅ bold */
-  color: #2e7d32;        /* ✅ green theme */
-  margin-bottom: 12px;   /* ✅ more spacing below */
+  font-size: 20px;       
+  font-weight: 600;      
+  color: #2e7d32;       
+  margin-bottom: 12px;  
 }
 
 .pref-card h2 {
-  color: #2e7d32; /* ✅ Green heading */
+  color: #2e7d32;
   margin-bottom: 10px;
 }
 
