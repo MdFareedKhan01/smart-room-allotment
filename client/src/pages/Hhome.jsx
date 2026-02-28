@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import './home.css'
 import LogoutIcon from '@mui/icons-material/Logout';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import LoginIcon from '@mui/icons-material/Login';
 
 function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -23,12 +24,12 @@ function Home() {
         <div className="nav-links-home">
             {!isLoggedIn?(
                         <div className="hero-buttons">
-                            <button className="primary-btn-home" onClick={() => navigate("/SignUp")}>
-                Sign Up
-            </button>
-            <button className="primary-btn-home" onClick={() => navigate("/Login")}>
-                Login
-            </button>
+            <LoginIcon sx={{
+        color: '#22c55e',
+        '&:hover': {
+          backgroundColor: '#0f766e', // Use pseudo-selectors
+        },
+      }} onClick={() => navigate("/Login")}  />
                             <img src="https://jmicoe.in/images/jmi-logo.jpg"
                                 alt="profile card" />
                         </div>
