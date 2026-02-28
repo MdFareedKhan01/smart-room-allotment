@@ -57,6 +57,7 @@ function Personality() {
       return;
     }
     if (answers.includes(null)) {
+      console.log(e);
       alert("Please answer all questions");
       return;
     }
