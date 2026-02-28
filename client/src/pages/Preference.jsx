@@ -29,7 +29,7 @@ function Preference() {
         studentId,
         preferences
       });
-      navigate("/Dashboard");
+      navigate("/");
     } catch (err) {
       console.error(err);
     }

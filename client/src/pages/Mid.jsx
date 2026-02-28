@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import './mid.css';
-
+import HomeIcon from '@mui/icons-material/Home';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import LogoutIcon from '@mui/icons-material/Logout';
 function Mid() {
   const navigate = useNavigate();
 
@@ -23,17 +25,35 @@ function Mid() {
       <nav className="navbar-home">
         <div className="logo-home">smartRootAllotment</div>
         <div className="nav-links-home">
-          <button
-            className="primary-btn-home"
+          <HomeIcon sx={{
+        color: '#22c55e',
+        '&:hover': {
+          backgroundColor: '#0f766e', // Use pseudo-selectors
+        },
+      }}
             onClick={() => {
               // Reset step when user clicks Home (new login)
               setStep(1);
               localStorage.setItem("step", "1");
               navigate("/");
-            }}
-          >
-            Home
-          </button>
+            }}/>
+            <AccountCircleIcon sx={{
+        color: '#22c55e',
+        '&:hover': {
+          backgroundColor: '#0f766e', // Use pseudo-selectors
+        },
+      }} onClick={() => navigate("/Dashboard")}  />
+      <LogoutIcon onClick={() => {
+                                localStorage.removeItem("studentId");
+                                setIsLoggedIn(false);
+                                navigate("/");
+                                window.location.reload();
+                            }} sx={{
+        color: '#22c55e',
+        '&:hover': {
+          backgroundColor: '#0f766e', // Use pseudo-selectors
+        },
+      }} />
           <img
             src="https://jmicoe.in/images/jmi-logo.jpg"
             alt="profile card"

@@ -2,6 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './home.css'
+import LogoutIcon from '@mui/icons-material/Logout';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -14,7 +16,7 @@ function Home() {
   }, []);
 
   return (
-    <div>
+    <div class>
     <nav className="navbar-home">
         <div className="logo-home">smartRootAllotment</div>
 
@@ -25,17 +27,31 @@ function Home() {
                                 alt="profile card" />
                         </div>
                     ):(
-                        <div>
-                            Profile Here
-                            <button className="alt-btn-home" onClick={() => {
+                        <div className="nav-links-home">
+                            <AccountCircleIcon sx={{
+        color: '#22c55e',
+        '&:hover': {
+          backgroundColor: '#0f766e', // Use pseudo-selectors
+        },
+      }} onClick={() => navigate("/Dashboard")}  />
+                            <LogoutIcon onClick={() => {
                                 localStorage.removeItem("studentId");
                                 setIsLoggedIn(false);
                                 navigate("/");
                                 window.location.reload();
-                            }}>Logout</button>
+                            }} sx={{
+        color: '#22c55e',
+        '&:hover': {
+          backgroundColor: '#0f766e', // Use pseudo-selectors
+        },
+      }} />
                         </div>
                       )
             }
+            <img
+            src="https://jmicoe.in/images/jmi-logo.jpg"
+            alt="profile card"
+          />
         </div>
     </nav>
     <section className="hero">
@@ -53,9 +69,14 @@ function Home() {
             </button>
         </div>
       ) : (
-        <button className="primary-btn-home" onClick={() => navigate("/best-match")}>
+        <div className="hero-buttons">
+            <button className="primary-btn-home" onClick={() => navigate("/Mid")}>
+                Take the test
+            </button>
+            <button className="primary-btn-home" onClick={() => navigate("/best-match")}>
           Find Your Best Match
         </button>
+        </div>
       )}
     
   </div>

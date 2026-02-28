@@ -25,7 +25,7 @@ function Login() {
       );
       console.log(response.data);
       localStorage.setItem("studentId", response.data.studentId);
-      navigate("/Mid");
+      navigate("/");
     } catch (err) {
       setError(err.response?.data?.message || "Login failed");
     }

@@ -16,6 +16,7 @@ body {
   color: #444; /* neutral dark text */
 }
 
+
 /* Navbar */
 .navbar-home {
   display: flex;
@@ -23,7 +24,7 @@ body {
   align-items: center;
   padding: 20px 60px;
   background: #fff;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid black;
 }
 
 .logo-home {
