@@ -105,7 +105,7 @@ function Personality() {
           <h2>Personality Test</h2>
           <p>Answer the following 16 questions to discover your personality type</p>
 
-          <form className="question-form" onSubmit={handleSubmit}>
+          <div className="question-form">
             {visibleQuestions.map((q, index) => (
               <div key={start + index} className="question-block">
                 <div className="question-text">
@@ -139,12 +139,12 @@ function Personality() {
                   Next
                 </button>
               ) : (
-                <button type="submit" className="primary-btn" >
+                <button type="submit" className="primary-btn" onClick={handleSubmit}>
                   Submit
                 </button>
               )}
             </div>
-          </form>
+          </div>
         </div>
       </div>
 
