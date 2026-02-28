@@ -53,6 +53,7 @@ function Personality() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (groupIndex !== 3) return;
     if (answers.includes(null)) {
     alert("Please answer all questions");
     return;
@@ -130,7 +131,7 @@ function Personality() {
                   Previous
                 </button>
               )}
-              {groupIndex <= 3 ? (
+              {groupIndex < 3 ? (
                 <button type="button" className="primary-btn" onClick={handleNext}>
                   Next
                 </button>
