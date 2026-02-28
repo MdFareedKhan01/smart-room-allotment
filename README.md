@@ -91,20 +91,33 @@ Displays:
 
 ```
 smart-room-allotment/
-│
+
 ├── client/
 │   ├── src/
-│   │   ├── Home.jsx
-│   │   ├── Personality.jsx
-│   │   ├── BestMatch.jsx
-│   │   ├── Rooms.jsx
-│   │   └── App.jsx
+│   │   ├── pages/
+│   │   │   ├── BestMatch.jsx
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── Home.jsx
+│   │   │   ├── Login.jsx
+│   │   │   ├── Mid.jsx
+│   │   │   ├── Personality.jsx
+│   │   │   ├── Preference.jsx
+│   │   │   ├── Rooms.jsx
+│   │   │   └── SignUp.jsx
+│   │   ├── Comp.jsx
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── index.css
+│   ├── index.html
+│   └── vite.config.js
 │
 ├── server/
 │   ├── models/
 │   │   ├── Student.js
 │   │   └── Room.js
+│   ├── functions.js
 │   ├── index.js
+│   └── .env
 │
 └── README.md
 ```
