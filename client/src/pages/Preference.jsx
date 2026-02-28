@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./preference.css";
 
@@ -16,9 +17,23 @@ function Preference() {
     setPreferences((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    navigate("/Dashboard",{ state: { preferences } });
+    const studentId = localStorage.getItem("studentId");
+    if (!studentId) {
+    alert("User not logged in");
+    return;
+  }
+  try {
+      await axios.post("http://localhost:5000/submit-preferences", {
+        studentId,
+        preferences
+      });
+      navigate("/Dashboard");
+    } catch (err) {
+      console.error(err);
+    }
+    
   };
 
   return (
@@ -41,7 +56,6 @@ function Preference() {
         <p>Select your lifestyle preferences below</p>
 
         <form onSubmit={handleSubmit} className="pref-form">
-          {/* Food Preference */}
           <div className="pref-block">
             <h4>Food Preference</h4>
             <div className="pref-options">
@@ -62,7 +76,6 @@ function Preference() {
             </div>
           </div>
 
-          {/* Time Preference */}
           <div className="pref-block">
             <h4>Preferred Time</h4>
             <div className="pref-options">
@@ -83,7 +96,6 @@ function Preference() {
             </div>
           </div>
 
-          {/* Room Preference */}
           <div className="pref-block">
             <h4>Room Type</h4>
             <div className="pref-options">
@@ -104,7 +116,7 @@ function Preference() {
             </div>
           </div>
 
-          {/* Study Preference */}
+
           <div className="pref-block">
             <h4>Study Style</h4>
             <div className="pref-options">
@@ -125,7 +137,6 @@ function Preference() {
             </div>
           </div>
 
-          {/* Social Preference */}
           <div className="pref-block">
             <h4>Social Preference</h4>
             <div className="pref-options">
