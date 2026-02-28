@@ -55,15 +55,15 @@ function Personality() {
     e.preventDefault();
     if (groupIndex !== 3) return;
     if (answers.includes(null)) {
-    alert("Please answer all questions");
-    return;
-  }
+      alert("Please answer all questions");
+      return;
+    }
     console.log("Collected answers:", answers);
     const studentId = localStorage.getItem("studentId");
     if (!studentId) {
-    alert("User not logged in");
-    return;
-  }
+      alert("User not logged in");
+      return;
+    }
   const result = calculateMBTI(answers);
   try {
     await axios.post("http://localhost:5000/submit-personality", {

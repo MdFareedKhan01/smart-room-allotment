@@ -1,0 +1,10 @@
+{
+    isLoggedIn?(
+        <div></div>
+    ):(
+        <button className="alt-btn-home" onClick={() => {
+                localStorage.removeItem("studentId");
+                navigate("/");
+            }}>Logout</button>
+    )
+}

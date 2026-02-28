@@ -7,6 +7,7 @@ import SignUp from './pages/SignUp';
 import Preference from "./pages/Preference";
 import Dashboard from "./pages/Dashboard";
 import Mid from "./pages/Mid";
+import BestMatch from "./pages/BestMatch";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/Preference" element={<Preference />} />
         <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/Mid" element={<Mid />} />
+        <Route path="/best-match" element={<BestMatch />} />
       </Routes>
   );
 }

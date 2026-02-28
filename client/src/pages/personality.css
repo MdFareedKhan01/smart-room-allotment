@@ -28,7 +28,6 @@
   font-size: 16px;
 }
 
-/* Questions */
 .question-form {
   text-align: left;
   width: 100%;
@@ -67,10 +66,10 @@
   accent-color: #2e7d32;
   margin-right: 6px;
 }
-/* Navigation Buttons */
+
 .nav-buttons {
   display: flex;
-  justify-content: space-between;   /* Push buttons to far edges */
+  justify-content: space-between;
   align-items: center;
   margin-top: 40px;
   width: 100%;

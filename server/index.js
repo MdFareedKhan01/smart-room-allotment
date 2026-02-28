@@ -173,6 +173,7 @@ app.get("/best-match/:id", async (req, res) => {
     const topCandidates = scoredStudents.slice(0, 5);
     topCandidates.sort((a, b) => b.prefScore - a.prefScore);
     const bestMatch = topCandidates[0];
+    console.log(bestMatch.prefScore);
     res.json({
       match: bestMatch.student,
       compatibilityScore: bestMatch.compScore,

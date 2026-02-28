@@ -4,7 +4,14 @@ import { useNavigate } from "react-router-dom";
 import './home.css'
 
 function Home() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
+  useEffect(() => {
+    const studentId = localStorage.getItem("studentId");
+    if (studentId) {
+      setIsLoggedIn(true);
+    }
+  }, []);
 
   return (
     <div>
@@ -12,10 +19,23 @@ function Home() {
         <div className="logo-home">smartRootAllotment</div>
 
         <div className="nav-links-home">
-            <button className="primary-btn-home" onClick={() => navigate("/SignUp")}>  Sign Up</button>
-            <button className="primary-btn-home" onClick={() => navigate("/Login")}>  login</button>
-            <img src="https://jmicoe.in/images/jmi-logo.jpg"
-                     alt="profile card" />
+            {!isLoggedIn?(
+                        <div>
+                            <img src="https://jmicoe.in/images/jmi-logo.jpg"
+                                alt="profile card" />
+                        </div>
+                    ):(
+                        <div>
+                            Profile Here
+                            <button className="alt-btn-home" onClick={() => {
+                                localStorage.removeItem("studentId");
+                                setIsLoggedIn(false);
+                                navigate("/");
+                                window.location.reload();
+                            }}>Logout</button>
+                        </div>
+                      )
+            }
         </div>
     </nav>
     <section className="hero">
@@ -23,14 +43,21 @@ function Home() {
     <h1>Congratulations!!<br />You are selected for Hostel</h1>
     <p>Sign up and opt for smart room allocation.</p>
 
-    <div className="hero-buttons">
-      <button className="primary-btn-home" onClick={() => navigate("/SignUp")}>
-        Sign Up
-      </button>
-      <button className="primary-btn-home" onClick={() => navigate("/Login")}>
-        Login
-      </button>
-    </div>
+    {!isLoggedIn ? (
+        <div className="hero-buttons">
+            <button className="primary-btn-home" onClick={() => navigate("/SignUp")}>
+                Sign Up
+            </button>
+            <button className="primary-btn-home" onClick={() => navigate("/Login")}>
+                Login
+            </button>
+        </div>
+      ) : (
+        <button className="primary-btn-home" onClick={() => navigate("/best-match")}>
+          Find Your Best Match
+        </button>
+      )}
+    
   </div>
 
   <div className="hero-right stats-panel">
