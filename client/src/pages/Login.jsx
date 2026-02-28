@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import "./login.css";
+import HomeIcon from '@mui/icons-material/Home';
 
 function Login() {
   const navigate = useNavigate();
@@ -35,12 +36,18 @@ function Login() {
       <nav className="navbar-home">
         <div className="logo-home">smartRootAllotment</div>
         <div className="nav-links-home">
-          <button
-            className="primary-btn-home"
-            onClick={() => navigate("/")}
-          >
-            Home
-          </button>
+          <HomeIcon sx={{
+        color: '#22c55e',
+        '&:hover': {
+          backgroundColor: '#0f766e', // Use pseudo-selectors
+        },
+      }}
+            onClick={() => {
+              // Reset step when user clicks Home (new login)
+              setStep(1);
+              localStorage.setItem("step", "1");
+              navigate("/");
+            }}/>
           <img
             src="https://jmicoe.in/images/jmi-logo.jpg"
             alt="profile card"

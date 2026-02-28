@@ -22,7 +22,13 @@ function Home() {
 
         <div className="nav-links-home">
             {!isLoggedIn?(
-                        <div>
+                        <div className="hero-buttons">
+                            <button className="primary-btn-home" onClick={() => navigate("/SignUp")}>
+                Sign Up
+            </button>
+            <button className="primary-btn-home" onClick={() => navigate("/Login")}>
+                Login
+            </button>
                             <img src="https://jmicoe.in/images/jmi-logo.jpg"
                                 alt="profile card" />
                         </div>
@@ -45,13 +51,14 @@ function Home() {
           backgroundColor: '#0f766e', // Use pseudo-selectors
         },
       }} />
-                        </div>
-                      )
-            }
-            <img
+      <img
             src="https://jmicoe.in/images/jmi-logo.jpg"
             alt="profile card"
           />
+                        </div>
+                      )
+            }
+            
         </div>
     </nav>
     <section className="hero">

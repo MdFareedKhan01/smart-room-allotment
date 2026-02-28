@@ -12,7 +12,9 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-  background-color: #f1f5f9; /* slate-100 background */
+  background: linear-gradient(
+    135deg,
+    #000000, #dd40e2);
   color: #444; /* neutral dark text */
 }
 
