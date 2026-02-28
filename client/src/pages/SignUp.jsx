@@ -34,7 +34,7 @@ function SignUp() {
   return (
     <div className="bodyparent-s">
       <nav className="navbar-home">
-        <div className="logo-home">smartRootAllotment</div>
+        <div className="logo-home">RoomEngine</div>
         <div className="nav-links-home">
           <HomeIcon sx={{
         color: '#22c55e',
@@ -47,10 +47,6 @@ function SignUp() {
               localStorage.setItem("step", "1");
               navigate("/");
             }}/>
-          <img
-            src="https://jmicoe.in/images/jmi-logo.jpg"
-            alt="profile card"
-          />
         </div>
       </nav>
 

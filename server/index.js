@@ -150,7 +150,7 @@ app.get("/best-match/:id", async (req, res) => {
     }
     const allStudents = await Student.find({
       _id: { $ne: currentStudent._id },
-      roomAssigned: false
+      roomAssigned: true
     });
     if (allStudents.length === 0) {
       return res.json({ message: "No other students available" });

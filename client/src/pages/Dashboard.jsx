@@ -70,7 +70,7 @@ function Dashboard() {
   return (
     <div>
       <nav className="navbar-home">
-        <div className="logo-home">smartRootAllotment</div>
+        <div className="logo-home">RoomEngine</div>
         <div className="nav-links-home">
           <HomeIcon sx={{
         color: '#22c55e',
@@ -101,10 +101,7 @@ function Dashboard() {
           backgroundColor: '#0f766e', // Use pseudo-selectors
         },
       }} />
-          <img
-            src="https://jmicoe.in/images/jmi-logo.jpg"
-            alt="profile card"
-          />
+          
         </div>
       </nav>
     <div className="dash-body">
@@ -157,51 +154,54 @@ function Dashboard() {
       </div>
     </div>
      <footer className="footer">
-        <div className="footer-container">
+  <div className="footer-container">
 
-          <div className="footer-column">
-            <h3>Stay Connected</h3>
-            <div className="social-icons">
-              <a href="#">Facebook</a>
-              <a href="#">YouTube</a>
-            </div>
-            <p>Jamia Millia Islamia</p>
-          </div>
+    <div className="footer-column">
+      <h3>Stay Connected</h3>
+      <div className="social-icons">
+        <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.youtube.com/yourchannel" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://www.linkedin.com/company/yourcompany" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+      <p>RoomEngine • Jamia Millia Islamia</p>
+    </div>
 
-          <div className="footer-column">
-            <h3>Navigate JMI</h3>
-            <ul>
-              <li><a href="#">jmi.ac.in</a></li>
-              <li><a href="#">Courses</a></li>
-              <li><a href="#">Hostel Guidelines</a></li>
-              <li><a href="#">Campus Map</a></li>
-            </ul>
-          </div>
+    <div className="footer-column">
+      <h3>Navigate JMI</h3>
+      <ul>
+        <li><a href="https://jmi.ac.in">Official Website</a></li>
+        <li><a href="#">Courses & Programs</a></li>
+        <li><a href="#">Hostel Guidelines</a></li>
+        <li><a href="#">Campus Map</a></li>
+      </ul>
+    </div>
 
-          <div className="footer-column">
-            <h3>Find out more</h3>
-            <ul>
-              <li><a href="#">FAQs</a></li>
-              <li><a href="#">Old Question Papers</a></li>
-              <li><a href="#">Payment Methods</a></li>
-            </ul>
-          </div>
+    <div className="footer-column">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Room Allocation Policies</a></li>
+        <li><a href="#">Payment Options</a></li>
+        <li><a href="#">Support Center</a></li>
+      </ul>
+    </div>
 
-          <div className="footer-column">
-            <h3>Quick Links</h3>
-            <ul>
-              <li><a href="#">Apply Now</a></li>
-              <li><a href="#">Check Allocation Status</a></li>
-              <li><a href="#">Admin</a></li>
-            </ul>
-          </div>
+    <div className="footer-column">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Apply for Hostel</a></li>
+        <li><a href="#">Check Allocation Status</a></li>
+        <li><a href="#">Student Dashboard</a></li>
+        <li><a href="#">Admin Login</a></li>
+      </ul>
+    </div>
 
-        </div>
+  </div>
 
-        <div className="footer-bottom">
-          © 2026 All Rights Reserved Jamia Millia Islamia.
-        </div>
-      </footer>
+  <div className="footer-bottom">
+    © 2026 RoomEngine • All Rights Reserved • Jamia Millia Islamia
+  </div>
+</footer>
     </div>
   );
 }
