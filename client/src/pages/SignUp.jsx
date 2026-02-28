@@ -1,8 +1,34 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
 import "./signUp.css";
 
 function SignUp() {
   const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: ""
+  });
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/signup",
+        formData
+      );
+      console.log("Saved:", response.data);
+      navigate("/Login")
+    } catch (error) {
+      console.error("Error:", error.response?.data || error.message);
+    }
+  };
 
   return (
     <div className="bodyparent">
@@ -32,19 +58,20 @@ function SignUp() {
             <button id="signupTab" className="active" onClick={() => navigate("/SignUp")}>Sign Up</button>
           </div>
 
-          <form id="authForm">
+          <form id="authForm" onSubmit={handleSubmit}>
             <div className="input-group">
-              <input type="text" id="name" placeholder="Name" required />
+              <input type="text" placeholder="Name" onChange={handleChange} name="name" required />
             </div>
 
             <div className="input-group">
-              <input type="email" id="email" placeholder="Email" required />
+              <input type="email" placeholder="Email" onChange={handleChange} name="email" required />
             </div>
 
             <div className="input-group password-toggle">
               <input
                 type="password"
-                id="password"
+                name="password"
+                onChange={handleChange}
                 placeholder="Password"
                 required
               />
@@ -54,7 +81,6 @@ function SignUp() {
             <div className="input-group password-toggle">
               <input
                 type="password"
-                id="confirmPassword"
                 placeholder="Confirm Password"
                 required
               />
@@ -66,9 +92,7 @@ function SignUp() {
             <button
               type="submit"
               className="primary-btn"
-              id="submitBtn"
-              onClick={() => navigate("/Login")}
-            >
+              id="submitBtn">
               Sign Up
             </button>
           </form>
