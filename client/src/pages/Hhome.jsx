@@ -19,33 +19,50 @@ function Home() {
         </div>
     </nav>
     <section className="hero">
+  <div className="hero-left">
+    <h1>Congratulations!!<br />You are selected for Hostel</h1>
+    <p>Sign up and opt for smart room allocation.</p>
 
-        <div className="hero-left">
-            <h1>Congratulations!!<br />You are selected for Hostel</h1>
-            <p>
-                sign up and opt for room allocation
-            </p>
+    <div className="hero-buttons">
+      <button className="primary-btn-home" onClick={() => navigate("/SignUp")}>
+        Sign Up
+      </button>
+      <button className="primary-btn-home" onClick={() => navigate("/Login")}>
+        Login
+      </button>
+    </div>
+  </div>
 
-            <div className="hero-buttons">
-                <button className="primary-btn-home" onClick={() => navigate("/SignUp")}>  Sign Up</button>
-                <button className="primary-btn-home" onClick={() => navigate("/Login")}>  login</button>
+  <div className="hero-right stats-panel">
+    <h2 className="stats-title">Why SmartRoomAllotment?</h2>
+    <p className="stats-subtitle">
+      A smarter, fairer way to allocate hostel rooms at JMI.
+    </p>
 
-            </div>
-        </div>
+    <div className="stats-grid">
+      <div className="stat-item">
+        <div className="stat-value">120+</div>
+        <div className="stat-label">students matched in our demo data</div>
+      </div>
 
-        <div className="hero-right">
-            <img src="https://r1.ilikewallpaper.net/pic/202004/ana-de-armas-hollywood-reporter-4k-91735-1242x2688_640.jpg"
-                 alt="profile card" />
-        </div>
-        <div className="hero-right">
-            <img src="https://r1.ilikewallpaper.net/pic/202004/ana-de-armas-hollywood-reporter-4k-91735-1242x2688_640.jpg"
-                 alt="profile card" />
-        </div>
-        <div className="hero-right">
-            <img src="https://r1.ilikewallpaper.net/pic/202004/ana-de-armas-hollywood-reporter-4k-91735-1242x2688_640.jpg"
-                 alt="profile card" />
-        </div>
-    </section>
+      <div className="stat-item">
+        <div className="stat-value">60%</div>
+        <div className="stat-label">projected drop in roommate conflicts</div>
+      </div>
+
+      <div className="stat-item">
+        <div className="stat-value">Live</div>
+        <div className="stat-label">hostel seat tracking and room status</div>
+      </div>
+
+      <div className="stat-item">
+        <div className="stat-value">AI</div>
+        <div className="stat-label">character sketch for every student</div>
+      </div>
+    </div>
+  </div>
+</section>
+
     <section class="steps">
     <h2>4 Steps to Your Perfect Flatmate</h2>
     <div class="step">
