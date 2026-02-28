@@ -44,7 +44,6 @@ function SignUp() {
       }}
             onClick={() => {
               // Reset step when user clicks Home (new login)
-              setStep(1);
               localStorage.setItem("step", "1");
               navigate("/");
             }}/>
