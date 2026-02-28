@@ -5,7 +5,10 @@ import './mid.css';
 
 function Mid() {
   const navigate = useNavigate();
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(() => {
+  return parseInt(localStorage.getItem("step")) || 1;
+});
+
   return (
     <div>
       <nav className="navbar-home">
@@ -48,15 +51,17 @@ function Mid() {
             <h1>Take your personality test</h1>
             <p>sign up and opt for room allocation</p>
             <button
-              type="button"
-              className="primary-btn"
-              onClick={() => {
-                navigate("/Personality");
-                setStep(2);
-              }}
-            >
-              Peersonality
-            </button>
+  type="button"
+  className="primary-btn"
+  onClick={() => {
+    setStep(2);
+    localStorage.setItem("step", "2");
+    navigate("/Personality");
+  }}
+>
+  Personality
+</button>
+
           </div>
           <div className="prev-mid-hero-up">
             <h1>Select Your Preferences</h1>
