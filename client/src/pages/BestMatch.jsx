@@ -102,7 +102,7 @@ function BestMatch() {
         </div>
       </nav>
         <section className="dash-body-best">
-    <div className="card">
+    <div className="card-ro">
         <h2>Your Best Match</h2>
         <h3>{matchData.match.name}</h3>
         <p>Compatibility: {matchData.compatibilityPercent}%</p>

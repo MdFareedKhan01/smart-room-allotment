@@ -1,5 +1,5 @@
 .dash-body {
-  background: #f5f6fa;
+  background: #0f172a;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -7,15 +7,15 @@
 }
 
 .dash-card {
-  background: #fff;
+  background: #0f172a;
   padding: 50px;
   width: 900px; /* wide dashboard */
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 20px rgba(65, 244, 127, 0.15);
 }
 
 .dash-card h2 {
-  color: #2e7d32; /* ✅ green theme */
+  color: #69f970; /* ✅ green theme */
   margin-bottom: 20px;
   text-align: center;
 }
@@ -27,7 +27,7 @@
 .dash-section h3 {
   font-size: 20px;
   font-weight: 600;
-  color: #2e7d32;
+  color: #69f470;
   margin-bottom: 10px;
   border-left: 4px solid #2e7d32;
   padding-left: 8px;
@@ -35,6 +35,6 @@
 
 .dash-section p,
 .dash-section li {
-  color: #333;
+  color: #ffffff;
   margin-bottom: 6px;
 }

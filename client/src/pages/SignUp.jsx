@@ -32,7 +32,7 @@ function SignUp() {
   };
 
   return (
-    <div className="bodyparent">
+    <div className="bodyparent-s">
       <nav className="navbar-home">
         <div className="logo-home">smartRootAllotment</div>
         <div className="nav-links-home">

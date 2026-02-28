@@ -32,7 +32,7 @@ function Login() {
     }
   };  
   return (
-    <div className="bodyparent">
+    <div className="bodyparent-l">
       <nav className="navbar-home">
         <div className="logo-home">smartRootAllotment</div>
         <div className="nav-links-home">
