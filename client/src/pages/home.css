@@ -169,16 +169,6 @@ body {
   transition: background 0.3s ease;
 }
 
-.alt-btn-home {
-  background-color: #c81313; /* accent teal */
-  color: white;
-  border: none;
-  padding: 12px 22px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
 .primary-btn-home:hover {
   background-color: #115e59;
 }
