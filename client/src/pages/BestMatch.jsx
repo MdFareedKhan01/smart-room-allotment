@@ -64,7 +64,6 @@ function BestMatch() {
     return (<div>No other students available</div>);
   } 
   return (
-    <div>
       <div>
       <nav className="navbar-home">
         <div className="logo-home">smartRootAllotment</div>
@@ -105,7 +104,6 @@ function BestMatch() {
         </div>
       </nav>
         <section className="hero">
-
     <div className="card">
         <h2>Your Best Match</h2>
         <h3>{matchData.match.name}</h3>
@@ -116,7 +114,6 @@ function BestMatch() {
       <button onClick={handleConfirmRoom}>
           Confirm Roommate
       </button>
-    </div>
   </section>
    <footer className="footer">
         <div className="footer-container">
