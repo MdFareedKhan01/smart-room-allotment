@@ -4,6 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import Student from "./models/Student.js";
 import Room from "./models/Room.js";
+import { compatibility ,preferenceMatch } from "./functions.js";
 
 dotenv.config();
 
@@ -141,6 +142,49 @@ app.get("/student/:id", async (req, res) => {
   }
 });
 
+app.get("/best-match/:id", async (req, res) => {
+  try {
+    const currentStudent = await Student.findById(req.params.id);
+    if (!currentStudent) {
+      return res.status(404).json({ message: "Student not found" });
+    }
+    const allStudents = await Student.find({
+      _id: { $ne: currentStudent._id }
+    });
+    if (allStudents.length === 0) {
+      return res.json({ message: "No other students available" });
+    }
+    const scoredStudents = allStudents.map(student => {
+      const compScore = compatibility(
+        currentStudent.personalityScores,
+        student.personalityScores
+      );
+      const prefScore = preferenceMatch(
+        currentStudent.preferences,
+        student.preferences
+      );
+      return {
+        student,
+        compScore,
+        prefScore
+      };
+    });
+    scoredStudents.sort((a, b) => a.compScore - b.compScore);
+    const topCandidates = scoredStudents.slice(0, 5);
+    topCandidates.sort((a, b) => b.prefScore - a.prefScore);
+    const bestMatch = topCandidates[0];
+    res.json({
+      match: bestMatch.student,
+      compatibilityScore: bestMatch.compScore,
+      preferenceMatchScore: bestMatch.prefScore,
+      compatibilityPercent: Math.round(
+        100-(bestMatch.compScore/64)*100
+      )
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
