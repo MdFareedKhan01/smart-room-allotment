@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-function calculateMBTI(answers) {
+export function calculateMBTI(answers) {
   const EI = answers.slice(0,4).reduce((a,b)=>a+b,0);
   const SN = answers.slice(4,8).reduce((a,b)=>a+b,0);
   const TF = answers.slice(8,12).reduce((a,b)=>a+b,0);

@@ -73,6 +73,31 @@ app.post("/signup", async (req, res) => {
   }
 });
 
+app.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const student = await Student.findOne({ email });
+
+    if (!student) {
+      return res.status(400).json({ message: "User not found" });
+    }
+
+    if (student.password !== password) {
+      return res.status(400).json({ message: "Invalid password" });
+    }
+
+    res.json({
+      message: "Login successful",
+      studentId: student._id,
+      name: student.name
+    });
+
+  } catch (err) {
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
 app.post("/submit-personality", async (req, res) => {
   const { studentId, scores, type } = req.body;
   try {
