@@ -46,10 +46,6 @@ app.get("/SignUp", (req, res) => {
   console.log("enteredSignUp");
 });
 
-app.get("/Comp", (req, res) => {
-  res.json(" ");
-  console.log("Compsss");
-});
 app.get("/Preference", (req, res) => {
   res.json(" ");
   console.log("Compsss");

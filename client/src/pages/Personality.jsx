@@ -72,7 +72,7 @@ function Personality() {
       type: result.type
     });
 
-    navigate("/Preference");
+    navigate("/Mid");
 
   } catch (err) {
     console.error(err);

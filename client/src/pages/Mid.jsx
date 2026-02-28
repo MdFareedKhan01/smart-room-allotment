@@ -5,8 +5,7 @@ import './mid.css';
 
 function Mid() {
   const navigate = useNavigate();
-  const [step, setStep] = useState(1); // track current step (1 or 2)
-
+  const [step, setStep] = useState(1);
   return (
     <div>
       <nav className="navbar-home">
@@ -53,10 +52,10 @@ function Mid() {
               className="primary-btn"
               onClick={() => {
                 navigate("/Personality");
-                setStep(2); // move to next step
+                setStep(2);
               }}
             >
-              click
+              Peersonality
             </button>
           </div>
           <div className="prev-mid-hero-up">
@@ -67,7 +66,7 @@ function Mid() {
               className="primary-btn"
               onClick={() => navigate("/Preference")}
             >
-              click
+              Preference
             </button>
           </div>
         </div>

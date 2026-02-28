@@ -24,7 +24,7 @@ const answersFarhan = [4,3,4,2,4,3,4,5,3,3,4,4,4,3,4,4];
 const answersRehan = [4,3,2,2,3,3,4,4,3,4,4,4,4,3,4,5];
 const answersYusuf= [3,5,3,4,5,4,2,5,5,2,4,3,2,4,4,2];
 
-function compatibility(a, b) {
+ export function compatibility(a, b) {
   return (
     Math.abs(a.scores.EI - b.scores.EI) +
     Math.abs(a.scores.SN - b.scores.SN) +
@@ -33,27 +33,3 @@ function compatibility(a, b) {
   );
 }
 
-
-function Comp(){
-    const navigate = useNavigate();
-    const location = useLocation();
-  const answers = location.state?.answers || [];
-const f = calculateMBTI(answersFareed);
-const q = calculateMBTI(answersFarhan);
-const r = calculateMBTI(answersRehan);
-const y = calculateMBTI(answersYusuf);
-const user=calculateMBTI(answers);
-    return (
-    <div>
-      <h2>Compatiblity</h2>
-      <p> with fareed : {compatibility(f,user)}</p>
-      <p> with Rehan : {compatibility(q,user)}</p>
-      <p> with Yusuf : {compatibility(r,user)}</p>
-      <p> with Farhan : {compatibility(y,user)}</p>
-
-      <button className="primary-btn-home" onClick={() => navigate("/Preference")}> now ....</button>
-    </div>
-  );
-}
-
-export default Comp;
