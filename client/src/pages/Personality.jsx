@@ -130,12 +130,12 @@ function Personality() {
                   Previous
                 </button>
               )}
-              {groupIndex < 3 ? (
+              {groupIndex <= 3 ? (
                 <button type="button" className="primary-btn" onClick={handleNext}>
                   Next
                 </button>
               ) : (
-                <button type="submit" className="primary-btn" onClick={() => navigate("/Mid")}>
+                <button type="submit" className="primary-btn" >
                   Submit
                 </button>
               )}
