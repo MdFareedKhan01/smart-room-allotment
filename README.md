@@ -206,6 +206,7 @@ npm run dev
 - Conflict detection
 - Matching analytics dashboard
 - Preference priority based roommate matching
+- Use machine learning for more accurate results
 
 ---
 
