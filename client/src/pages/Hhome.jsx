@@ -179,6 +179,12 @@ const handleShowRooms = () => {
                 Browse matches, see compatibility scores, and start chatting
                 with potential flatmates through secure messaging.
             </p>
+            <div class="tags">
+                <span>No Doubt</span>
+                <span>Schedule Meet</span>
+                <span>Planning</span>
+                <span>Harmony</span>
+            </div>
         </div>
     </div>
 

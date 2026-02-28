@@ -82,7 +82,7 @@ body {
 .step-content h3 {
   font-size: 22px;
   margin-bottom: 15px;
-  color: #0f766e; /* accent teal */
+  color: #06eedc; /* accent teal */
 }
 
 .step-content p {
@@ -149,7 +149,7 @@ body {
 }
 
 .hero-left p {
-  color: #555;
+  color: #06eedc;
   line-height: 1.6;
   margin-bottom: 30px;
 }
@@ -204,6 +204,7 @@ body {
   background-color: #0f172a; /* dark slate */
   color: #e2e8f0;
   padding: 40px 60px 20px 60px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .footer-container {
@@ -327,7 +328,7 @@ body {
 
 .hero-left p {
   font-size: 1rem;
-  color: var(--text-muted);
+  color: white;
   margin-bottom: 1.75rem;
 }
 

@@ -91,6 +91,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 80px 100px;
+  background: #0f172a;
 }
 
 .prev-mid-hero-up {
@@ -98,7 +99,7 @@ body {
   border: 1px solid #e2e8f0;
   border-radius: 12px;
   padding: 30px;
-  background: #fff;
+ background: #0f172a;
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -116,7 +117,7 @@ body {
 }
 
 .prev-mid-hero-up p {
-  color: #555;
+  color: white;
   line-height: 1.6;
   margin-bottom: 30px;
 }
