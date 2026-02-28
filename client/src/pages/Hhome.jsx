@@ -95,7 +95,7 @@ const handleShowRooms = () => {
             <button className="primary-btn-home" onClick={() => navigate("/best-match")}>
                 Find Your Best Match
             </button>
-            <button onClick={handleShowRooms}>
+            <button className="primary-btn-home" style={{backgroundColor:"#8753de"}} onClick={handleShowRooms}>
                 Show Hostel Rooms
             </button>
         </div>

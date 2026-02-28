@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./home.css"
 import axios from "axios";
 
 function Rooms() {
@@ -36,13 +37,14 @@ function Rooms() {
   };
 
   return (
-    <div>
+    <div className="dash-body-best">
+    <div className="card">
       <h2>All Hostel Rooms</h2>
 
       {rooms.map((room) => (
         <div key={room._id}>
           <h3>Room {room.roomNumber}</h3>
-          <ul>
+          <ul style={{"list-style-type": "none"}}>
             {room.students.map((student) => (
               <li key={student._id}>{student.name}</li>
             ))}
@@ -50,7 +52,8 @@ function Rooms() {
         </div>
       ))}
 
-      <button onClick={handleExit}>Exit Admin</button>
+      <button className="primary-btn-home" style={{marginTop:"6px" , backgroundColor:"#B23B3B"}} onClick={handleExit}>Exit Admin</button>
+    </div>
     </div>
   );
 }

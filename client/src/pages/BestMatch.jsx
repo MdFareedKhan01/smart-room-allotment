@@ -30,7 +30,6 @@ function BestMatch() {
   }, []);
   
   if (!matchData) return <div>Finding your best match...</div>;
-  console.log(matchData);
   const handleConfirmRoom = async () => {
   try {
     const student1Id = localStorage.getItem("studentId");
