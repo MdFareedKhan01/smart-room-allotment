@@ -1,5 +1,5 @@
 .pref-body {
-  background: #f5f6fa;
+  background: #0f172a;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -7,28 +7,28 @@
 }
 
 .pref-card {
-  background: rgba(255, 255, 255, 0.85);
+  background: #0f172a;
   backdrop-filter: blur(6px);
   padding: 40px;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 20px rgba(194, 242, 161, 0.15);
   width: 70%;
   text-align: center;
 }
 .pref-block h4 {
   font-size: 20px;       
   font-weight: 600;      
-  color: #2e7d32;       
+  color: white;       
   margin-bottom: 12px;  
 }
 
-.pref-card h2 {
-  color: #2e7d32;
+.pref-card h1 {
+  color: #70ff77;
   margin-bottom: 10px;
 }
 
 .pref-card p {
-  color: #555;
+  color: white;
   margin-bottom: 25px;
 }
 
@@ -40,7 +40,7 @@
 
 .pref-block h4 {
   margin-bottom: 10px;
-  color: #333;
+  color: white;
 }
 
 .pref-options {
@@ -63,7 +63,7 @@
 }
 
 .pref-options .active {
-  background: #2e7d32;        /* ✅ Active green */
+  background: #46ff4f;        /* ✅ Active green */
   color: #fff;
 }
 
@@ -72,7 +72,7 @@
   padding: 12px;
   border: none;
   border-radius: 8px;
-  background: #2e7d32;        /* ✅ Green submit */
+  background: #62dc68;        /* ✅ Green submit */
   color: #fff;
   font-weight: 600;
   cursor: pointer;
@@ -80,6 +80,15 @@
 }
 
 .pref-submit:hover {
-  background: #1b5e20;        /* ✅ Darker green hover */
+  background: #24a32c;        /* ✅ Darker green hover */
   transform: scale(1.05);
+}
+.bodyparent-p {
+    background: #0f172a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
 }

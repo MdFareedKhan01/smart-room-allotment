@@ -279,3 +279,16 @@
     font-size: 1.5rem;
   }
 }
+
+.bodyparent-l {
+    background: #0f172a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.card h2 {
+  color: #15803d;
+}

@@ -8,7 +8,7 @@
 }
 
 .card.full-width {
-  background: #fff;
+  background: #0f172a;
   padding: 40px;
   width: 100%;
   max-width: 1200px;
@@ -23,7 +23,7 @@
 }
 
 .card p {
-  color: #388e3c;
+  color: white;
   margin-bottom: 25px;
   font-size: 16px;
 }
@@ -38,13 +38,13 @@
   padding: 20px;
   border: 1px solid #c8e6c9;
   border-radius: 8px;
-  background: #f9fff9;
+ background: #0f172a;
 }
 
 .question-text {
   font-weight: 600;
   margin-bottom: 15px;
-  color: #2e7d32;
+  color: #06e812;
   font-size: 18px;
 }
 
@@ -53,7 +53,7 @@
   justify-content: space-between;
   width: 100%;
   font-size: 14px;
-  color: #555;
+  color: white;
 }
 
 .option-label {
