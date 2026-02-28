@@ -52,7 +52,6 @@ function Personality() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Collected answers:", answers);
-    navigate("/Mid",{ state: { answers } });
   };
 
   const start = groupIndex * 4;
@@ -113,7 +112,7 @@ function Personality() {
                   Next
                 </button>
               ) : (
-                <button type="submit" className="primary-btn">
+                <button type="submit" className="primary-btn" onClick={() => navigate("/Preference", { state: { answers } })}>
                   Submit
                 </button>
               )}
