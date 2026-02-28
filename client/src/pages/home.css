@@ -50,7 +50,7 @@ body {
 /* Steps Section */
 .steps {
   padding: 80px 10%;
-  background-color: #f1f5f9;
+  background: #0f172a;
 }
 
 .steps h2 {
@@ -86,7 +86,7 @@ body {
 }
 
 .step-content p {
-  color: #555;
+  color:white ;
   line-height: 1.6;
   margin-bottom: 20px;
 }
@@ -310,13 +310,12 @@ body {
 
 /* HERO */
 .hero {
-  max-width: 1200px;
-  margin: 3.5rem auto 4rem;
-  padding: 0 1.5rem;
+  max-width: 1600px;
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   gap: 3rem;
   align-items: center;
+  background: #0f172a;
 }
 
 .hero-left h1 {
