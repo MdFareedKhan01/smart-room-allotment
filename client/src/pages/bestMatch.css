@@ -1,0 +1,7 @@
+.dash-body-best {
+    background: #f5f6fa;
+    min-height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

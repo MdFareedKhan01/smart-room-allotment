@@ -4,6 +4,7 @@ import axios from "axios";
 import HomeIcon from '@mui/icons-material/Home';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LogoutIcon from '@mui/icons-material/Logout';
+import './bestMatch.css'
 
 function BestMatch() {
   const navigate = useNavigate();
@@ -103,17 +104,17 @@ function BestMatch() {
           />
         </div>
       </nav>
-        <section className="hero">
+        <section className="dash-body-best">
     <div className="card">
         <h2>Your Best Match</h2>
         <h3>{matchData.match.name}</h3>
         <p>Compatibility: {matchData.compatibilityPercent}%</p>
         <p>Preference Match: {matchData.preferenceMatchScore}/5</p>
         <p>Personality: {matchData.match.personalityType}</p>
-      </div>
-      <button onClick={handleConfirmRoom}>
+        <button className="primary-btn-home" onClick={handleConfirmRoom}>
           Confirm Roommate
       </button>
+      </div>
   </section>
    <footer className="footer">
         <div className="footer-container">
