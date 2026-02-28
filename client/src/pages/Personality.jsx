@@ -112,7 +112,7 @@ function Personality() {
                   Next
                 </button>
               ) : (
-                <button type="submit" className="primary-btn" onClick={() => navigate("/Preference", { state: { answers } })}>
+                <button type="submit" className="primary-btn" onClick={() => navigate("/Mid")}>
                   Submit
                 </button>
               )}
