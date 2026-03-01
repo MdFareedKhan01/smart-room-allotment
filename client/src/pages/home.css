@@ -15,11 +15,11 @@ body {
   background: linear-gradient(
     135deg,
     #000000, #dd40e2);
-  color: #444; /* neutral dark text */
+  color: #444; 
 }
 
 
-/* Navbar */
+
 .navbar-home {
   display: flex;
   justify-content: space-between;
@@ -32,7 +32,7 @@ body {
 .logo-home {
   font-weight: bold;
   font-size: 20px;
-  color: #22c55e; /* primary green */
+  color: #22c55e; 
 }
 
 .nav-links-home {
@@ -47,7 +47,7 @@ body {
   font-size: 14px;
 }
 
-/* Steps Section */
+
 .steps {
   padding: 80px 10%;
   background: #0f172a;
@@ -57,7 +57,7 @@ body {
   text-align: center;
   font-size: 36px;
   margin-bottom: 60px;
-  color: #22c55e; /* primary green */
+  color: #22c55e;
 }
 
 .step {
@@ -70,7 +70,7 @@ body {
   min-width: 60px;
   height: 60px;
 
-  color: #22c55e; /* primary green */
+  color: #22c55e;
   font-weight: bold;
   font-size: 20px;
   display: flex;
@@ -82,7 +82,7 @@ body {
 .step-content h3 {
   font-size: 22px;
   margin-bottom: 15px;
-  color: #06eedc; /* accent teal */
+  color: #06eedc;
 }
 
 .step-content p {
@@ -105,9 +105,9 @@ body {
   font-size: 14px;
 }
 
-/* Buttons */
+
 .signup {
-  background-color: #0f766e; /* accent teal */
+  background-color: #0f766e;
   color: white;
   border: none;
   padding: 8px 16px;
@@ -117,7 +117,7 @@ body {
 }
 
 .signup:hover {
-  background-color: #115e59; /* darker teal */
+  background-color: #115e59;
 }
 
 .login {
@@ -129,7 +129,7 @@ body {
   color: #0f766e;
 }
 
-/* Hero Section */
+
 .hero {
   flex: 1;
   display: flex;
@@ -144,7 +144,7 @@ body {
 
 .hero-left h1 {
   font-size: 48px;
-  color: #22c55e; /* primary green */
+  color: #22c55e; 
   margin-bottom: 20px;
 }
 
@@ -160,7 +160,7 @@ body {
 }
 
 .primary-btn-home {
-  background-color: #0f766e; /* accent teal */
+  background-color: #0f766e;
   color: white;
   border: none;
   padding: 12px 22px;
@@ -182,16 +182,15 @@ body {
   color: #0f766e;
 }
 
-/* Image */
+
 .hero-right img {
   width: 300px;
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-/* Footer */
 .footer {
-  background-color: #0f172a; /* dark slate */
+  background-color: #0f172a;
   color: #e2e8f0;
   padding: 40px 60px 20px 60px;
   border-top: 1px solid rgba(255, 255, 255, 0.3);
@@ -210,7 +209,7 @@ body {
 
 .footer-column h3 {
   margin-bottom: 15px;
-  color: #22c55e; /* primary green headings */
+  color: #22c55e;
 }
 
 .footer-column ul {
@@ -227,7 +226,7 @@ body {
 }
 
 .footer-column a:hover {
-  color: #0f766e; /* accent teal hover */
+  color: #0f766e; 
 }
 
 .social-icons {
@@ -294,12 +293,12 @@ body {
   --text-muted: #6b7280;
 }
 
-/* Page background */
+
 body {
   background: radial-gradient(circle at top left, #e0f2fe 0, #f1f5f9 40%, #f9fafb 100%);
 }
 
-/* HERO */
+
 .hero {
   max-width: 1600px;
   display: grid;
@@ -346,7 +345,6 @@ body {
   box-shadow: 0 14px 35px rgba(22, 163, 74, 0.4);
 }
 
-/* Right stats card */
 .stats-panel {
   border-radius: 1.75rem;
   padding: 2.2rem;
@@ -393,14 +391,12 @@ body {
   color: #374151;
 }
 
-/* “4 steps” section spacing below hero */
 .steps-section {
   max-width: 900px;
   margin: 0 auto 4rem;
   padding: 0 1.5rem;
 }
 
-/* Responsive */
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;

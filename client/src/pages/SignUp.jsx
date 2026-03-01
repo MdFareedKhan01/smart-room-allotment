@@ -39,11 +39,10 @@ function SignUp() {
           <HomeIcon sx={{
         color: '#22c55e',
         '&:hover': {
-          backgroundColor: '#0f766e', // Use pseudo-selectors
+          backgroundColor: '#0f766e',
         },
       }}
             onClick={() => {
-              // Reset step when user clicks Home (new login)
               localStorage.setItem("step", "1");
               navigate("/");
             }}/>

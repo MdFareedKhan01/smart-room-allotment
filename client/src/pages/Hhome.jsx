@@ -38,7 +38,7 @@ const handleShowRooms = () => {
             <LoginIcon sx={{
         color: '#22c55e',
         '&:hover': {
-          backgroundColor: '#0f766e', // Use pseudo-selectors
+          backgroundColor: '#0f766e', 
         },
       }} onClick={() => navigate("/Login")}  />
                             
@@ -48,7 +48,7 @@ const handleShowRooms = () => {
                             <AccountCircleIcon sx={{
         color: '#22c55e',
         '&:hover': {
-          backgroundColor: '#0f766e', // Use pseudo-selectors
+          backgroundColor: '#0f766e', 
         },
       }} onClick={() => navigate("/Dashboard")}  />
                             <LogoutIcon onClick={() => {
@@ -59,7 +59,7 @@ const handleShowRooms = () => {
                             }} sx={{
         color: '#22c55e',
         '&:hover': {
-          backgroundColor: '#0f766e', // Use pseudo-selectors
+          backgroundColor: '#0f766e', 
         },
       }} />
       

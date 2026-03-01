@@ -9,13 +9,13 @@
 .dash-card {
   background: #0f172a;
   padding: 50px;
-  width: 900px; /* wide dashboard */
+  width: 900px; 
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(65, 244, 127, 0.15);
 }
 
 .dash-card h2 {
-  color: #69f970; /* ✅ green theme */
+  color: #69f970; 
   margin-bottom: 20px;
   text-align: center;
 }

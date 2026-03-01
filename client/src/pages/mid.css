@@ -12,10 +12,9 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom, #f9fafb, #f1f5f9); /* soft gradient */
+  background: linear-gradient(to bottom, #f9fafb, #f1f5f9);
 }
 
-/* Navbar */
 .prev-mid-navbar {
   border-bottom: 1px solid #e2e8f0;
   display: flex;
@@ -32,7 +31,7 @@ body {
 .prev-mid-logo {
   font-weight: bold;
   font-size: 22px;
-  color: #22c55e; /* primary green */
+  color: #22c55e;
   letter-spacing: 0.5px;
 }
 
@@ -50,12 +49,12 @@ body {
 }
 
 .prev-mid-nav-links a:hover {
-  color: #0f766e; /* accent teal */
+  color: #0f766e; 
 }
 
-/* Buttons */
+
 .signup {
-  background-color: #0f766e; /* accent teal */
+  background-color: #0f766e; 
   color: white;
   border: none;
   padding: 8px 16px;
@@ -84,7 +83,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* Hero Section */
 .prev-mid-hero {
   display: flex;
   flex-direction: column;
@@ -122,7 +120,6 @@ body {
   margin-bottom: 30px;
 }
 
-/* Buttons inside hero */
 .primary-btn {
   background-color: #0f766e;
   color: white;
@@ -153,7 +150,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* Footer */
 .prev-mid-footer {
   background-color: #0f172a;
   color: #e2e8f0;
@@ -208,7 +204,6 @@ body {
   text-align: center;
 }
 
-/* Step Indicator */
 .step-indicator {
   display: flex;
   justify-content: center;
@@ -235,7 +230,6 @@ body {
   font-weight: bold;
 }
 
-/* Progress Bar */
 .progress-bar {
   width: 60%;
   height: 10px;

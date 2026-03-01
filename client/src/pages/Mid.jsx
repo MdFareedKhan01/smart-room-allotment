@@ -6,13 +6,10 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LogoutIcon from '@mui/icons-material/Logout';
 function Mid() {
   const navigate = useNavigate();
-
-  // Initialize step from localStorage, default to 1
   const [step, setStep] = useState(() => {
     return parseInt(localStorage.getItem("step")) || 1;
   });
 
-  // Reset step to 1 when Mid mounts (new user login scenario)
   useEffect(() => {
     if (!localStorage.getItem("step")) {
       setStep(1);
@@ -28,11 +25,10 @@ function Mid() {
           <HomeIcon sx={{
         color: '#22c55e',
         '&:hover': {
-          backgroundColor: '#0f766e', // Use pseudo-selectors
+          backgroundColor: '#0f766e',
         },
       }}
             onClick={() => {
-              // Reset step when user clicks Home (new login)
               setStep(1);
               localStorage.setItem("step", "1");
               navigate("/");
@@ -40,7 +36,7 @@ function Mid() {
             <AccountCircleIcon sx={{
         color: '#22c55e',
         '&:hover': {
-          backgroundColor: '#0f766e', // Use pseudo-selectors
+          backgroundColor: '#0f766e',
         },
       }} onClick={() => navigate("/Dashboard")}  />
       <LogoutIcon onClick={() => {
@@ -51,7 +47,7 @@ function Mid() {
                             }} sx={{
         color: '#22c55e',
         '&:hover': {
-          backgroundColor: '#0f766e', // Use pseudo-selectors
+          backgroundColor: '#0f766e',
         },
       }} />
           
@@ -62,14 +58,10 @@ function Mid() {
         <h1 style={{ color: "#22c55e", fontSize: "42px", marginBottom: "20px" }}>
           Welcome to Smart Room Allocation
         </h1>
-
-        {/* Step Indicator */}
         <div className="step-indicator">
           <span className={step === 1 ? "active-step" : ""}>Step 1: Personality Test</span>
           <span className={step === 2 ? "active-step" : ""}>Step 2: Preferences</span>
         </div>
-
-        {/* Progress Bar */}
         <div className="progress-bar">
           <div
             className="progress-fill"

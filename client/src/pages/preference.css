@@ -51,19 +51,19 @@
 .pref-options button {
   padding: 10px 20px;
   border-radius: 8px;
-  border: 1px solid #2e7d32; /* ✅ Green border */
+  border: 1px solid #2e7d32;
   background: #fff;
-  color: #2e7d32;             /* ✅ Green text */
+  color: #2e7d32;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .pref-options button:hover {
-  background: #c8e6c9;        /* ✅ Light green hover */
+  background: #c8e6c9;
 }
 
 .pref-options .active {
-  background: #46ff4f;        /* ✅ Active green */
+  background: #46ff4f;
   color: #fff;
 }
 
@@ -72,7 +72,7 @@
   padding: 12px;
   border: none;
   border-radius: 8px;
-  background: #62dc68;        /* ✅ Green submit */
+  background: #62dc68;
   color: #fff;
   font-weight: 600;
   cursor: pointer;
@@ -80,7 +80,7 @@
 }
 
 .pref-submit:hover {
-  background: #24a32c;        /* ✅ Darker green hover */
+  background: #24a32c;
   transform: scale(1.05);
 }
 .bodyparent-p {

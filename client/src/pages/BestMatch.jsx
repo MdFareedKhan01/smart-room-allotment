@@ -71,7 +71,7 @@ function BestMatch() {
           <HomeIcon sx={{
         color: '#22c55e',
         '&:hover': {
-          backgroundColor: '#0f766e', // Use pseudo-selectors
+          backgroundColor: '#0f766e',
         },
       }}
             onClick={() => {
@@ -81,7 +81,7 @@ function BestMatch() {
             <AccountCircleIcon sx={{
         color: '#22c55e',
         '&:hover': {
-          backgroundColor: '#0f766e', // Use pseudo-selectors
+          backgroundColor: '#0f766e', 
         },
       }} onClick={() => navigate("/Dashboard")}  />
       <LogoutIcon onClick={() => {
@@ -92,7 +92,7 @@ function BestMatch() {
                             }} sx={{
         color: '#22c55e',
         '&:hover': {
-          backgroundColor: '#0f766e', // Use pseudo-selectors
+          backgroundColor: '#0f766e', 
         },
       }} />
         </div>

@@ -75,30 +75,27 @@ function Dashboard() {
           <HomeIcon sx={{
         color: '#22c55e',
         '&:hover': {
-          backgroundColor: '#0f766e', // Use pseudo-selectors
+          backgroundColor: '#0f766e',
         },
       }}
             onClick={() => {
-              // Reset step when user clicks Home (new login)
-              // setStep(1);
               localStorage.setItem("step", "1");
               navigate("/");
             }}/>
             <AccountCircleIcon sx={{
         color: '#22c55e',
         '&:hover': {
-          backgroundColor: '#0f766e', // Use pseudo-selectors
+          backgroundColor: '#0f766e',
         },
       }} onClick={() => navigate("/Dashboard")}  />
       <LogoutIcon onClick={() => {
                                 localStorage.removeItem("studentId");
-                                // setIsLoggedIn(false);
                                 navigate("/");
                                 window.location.reload();
                             }} sx={{
         color: '#22c55e',
         '&:hover': {
-          backgroundColor: '#0f766e', // Use pseudo-selectors
+          backgroundColor: '#0f766e',
         },
       }} />
           
