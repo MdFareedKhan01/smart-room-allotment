@@ -53,7 +53,7 @@ function Login() {
 
       <div className="container" >
         <div className="card">
-          <h2>Welcome to SmartMate</h2>
+          <h2>Welcome to RoomEngine</h2>
           <p>Sign in to find your perfect roommate match</p>
 
           <div className="tabs">
