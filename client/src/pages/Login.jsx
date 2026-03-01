@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import Header from '../components/Header';
 import "./login.css";
-import HomeIcon from '@mui/icons-material/Home';
 
 function Login() {
   const navigate = useNavigate();
@@ -11,14 +11,21 @@ function Login() {
     password: ""
   });
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
+    setError("");
   };
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
+    setIsLoading(true);
+    
     try {
       const response = await axios.post(
         "http://localhost:5000/login",
@@ -28,27 +35,14 @@ function Login() {
       localStorage.setItem("studentId", response.data.studentId);
       navigate("/");
     } catch (err) {
-      setError(err.response?.data?.message || "Login failed");
+      setError(err.response?.data?.message || "Login failed. Please try again.");
+    } finally {
+      setIsLoading(false);
     }
   };  
   return (
     <div className="bodyparent-l">
-      <nav className="navbar-home">
-        <div className="logo-home">RoomEngine</div>
-        <div className="nav-links-home">
-          <HomeIcon sx={{
-        color: '#22c55e',
-        '&:hover': {
-          backgroundColor: '#0f766e', 
-        },
-      }}
-            onClick={() => {
-              localStorage.setItem("step", "1");
-              navigate("/");
-            }}/>
-          
-        </div>
-      </nav>
+      <Header />
 
       <div className="container" >
         <div className="card">
@@ -84,16 +78,16 @@ function Login() {
               <span className="toggle-btn">Show</span>
             </div>
 
-            <div className="error" id="errorMsg"></div>
+            {error && <div className="error" style={{ color: "red", marginTop: "10px" }}>{error}</div>}
 
             <button
               type="submit"
               className="primary-btn"
               id="submitBtn"
+              disabled={isLoading}
             >
-              Login
+              {isLoading ? "Logging in..." : "Login"}
             </button>
-            {error && <p style={{ color: "red" }}>{error}</p>}
           </form>
         </div>
       </div>

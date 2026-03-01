@@ -1,11 +1,9 @@
-import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import "./dashboard.css";
 import { useNavigate } from "react-router-dom";
-import HomeIcon from '@mui/icons-material/Home';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import LogoutIcon from '@mui/icons-material/Logout';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import "./dashboard.css";
 
 function Dashboard() {
   const [student, setStudent] = useState(null);
@@ -69,38 +67,7 @@ function Dashboard() {
 
   return (
     <div>
-      <nav className="navbar-home">
-        <div className="logo-home">RoomEngine</div>
-        <div className="nav-links-home">
-          <HomeIcon sx={{
-        color: '#22c55e',
-        '&:hover': {
-          backgroundColor: '#0f766e',
-        },
-      }}
-            onClick={() => {
-              localStorage.setItem("step", "1");
-              navigate("/");
-            }}/>
-            <AccountCircleIcon sx={{
-        color: '#22c55e',
-        '&:hover': {
-          backgroundColor: '#0f766e',
-        },
-      }} onClick={() => navigate("/Dashboard")}  />
-      <LogoutIcon onClick={() => {
-                                localStorage.removeItem("studentId");
-                                navigate("/");
-                                window.location.reload();
-                            }} sx={{
-        color: '#22c55e',
-        '&:hover': {
-          backgroundColor: '#0f766e',
-        },
-      }} />
-          
-        </div>
-      </nav>
+      <Header />
     <div className="dash-body">
       <div className="dash-card">
         <h2>Hello {name}</h2>
@@ -150,55 +117,7 @@ function Dashboard() {
         </section>
       </div>
     </div>
-     <footer className="footer">
-  <div className="footer-container">
-
-    <div className="footer-column">
-      <h3>Stay Connected</h3>
-      <div className="social-icons">
-        <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a href="https://www.youtube.com/yourchannel" target="_blank" rel="noopener noreferrer">YouTube</a>
-        <a href="https://www.linkedin.com/company/yourcompany" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </div>
-      <p>RoomEngine • Jamia Millia Islamia</p>
-    </div>
-
-    <div className="footer-column">
-      <h3>Navigate JMI</h3>
-      <ul>
-        <li><a href="https://jmi.ac.in">Official Website</a></li>
-        <li><a href="#">Courses & Programs</a></li>
-        <li><a href="#">Hostel Guidelines</a></li>
-        <li><a href="#">Campus Map</a></li>
-      </ul>
-    </div>
-
-    <div className="footer-column">
-      <h3>Resources</h3>
-      <ul>
-        <li><a href="#">FAQs</a></li>
-        <li><a href="#">Room Allocation Policies</a></li>
-        <li><a href="#">Payment Options</a></li>
-        <li><a href="#">Support Center</a></li>
-      </ul>
-    </div>
-
-    <div className="footer-column">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="#">Apply for Hostel</a></li>
-        <li><a href="#">Check Allocation Status</a></li>
-        <li><a href="#">Student Dashboard</a></li>
-        <li><a href="#">Admin Login</a></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div className="footer-bottom">
-    © 2026 RoomEngine • All Rights Reserved • Jamia Millia Islamia
-  </div>
-</footer>
+     <Footer />
     </div>
   );
 }

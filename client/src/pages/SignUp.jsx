@@ -1,53 +1,64 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import Header from '../components/Header';
 import "./signUp.css";
-import HomeIcon from '@mui/icons-material/Home';
 
 function SignUp() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    password: ""
+    password: "",
+    confirmPassword: ""
   });
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
+    setError("");
   };
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
+    if (formData.password !== formData.confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
+    
+    if (formData.password.length < 6) {
+      setError("Password must be at least 6 characters");
+      return;
+    }
+    
+    setIsLoading(true);
     try {
       const response = await axios.post(
         "http://localhost:5000/signup",
-        formData
+        {
+          name: formData.name,
+          email: formData.email,
+          password: formData.password
+        }
       );
       console.log("Saved:", response.data);
-      navigate("/Login")
+      navigate("/Login");
     } catch (error) {
+      setError(error.response?.data?.error || "Registration failed. Please try again.");
       console.error("Error:", error.response?.data || error.message);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
     <div className="bodyparent-s">
-      <nav className="navbar-home">
-        <div className="logo-home">RoomEngine</div>
-        <div className="nav-links-home">
-          <HomeIcon sx={{
-        color: '#22c55e',
-        '&:hover': {
-          backgroundColor: '#0f766e',
-        },
-      }}
-            onClick={() => {
-              localStorage.setItem("step", "1");
-              navigate("/");
-            }}/>
-        </div>
-      </nav>
+      <Header />
 
       <div className="container">
         <div className="card">
@@ -83,19 +94,23 @@ function SignUp() {
             <div className="input-group password-toggle">
               <input
                 type="password"
+                name="confirmPassword"
+                onChange={handleChange}
                 placeholder="Confirm Password"
                 required
               />
               <span className="toggle-btn">Show</span>
             </div>
 
-            <div className="error" id="errorMsg"></div>
+            {error && <div className="error" style={{ color: "red", marginTop: "10px" }}>{error}</div>}
 
             <button
               type="submit"
               className="primary-btn"
-              id="submitBtn">
-              Sign Up
+              id="submitBtn"
+              disabled={isLoading}
+            >
+              {isLoading ? "Signing up..." : "Sign Up"}
             </button>
           </form>
         </div>

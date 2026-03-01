@@ -1,20 +1,58 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import './home.css'
-import LogoutIcon from '@mui/icons-material/Logout';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import LoginIcon from '@mui/icons-material/Login';
 
 function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [stats, setStats] = useState({ count1: 0, count2: 0 });
   const navigate = useNavigate();
+  
   useEffect(() => {
     const studentId = localStorage.getItem("studentId");
     if (studentId) {
       setIsLoggedIn(true);
     }
   }, []);
+
+  useEffect(() => {
+    const statsPanel = document.querySelector('.stats-panel');
+    if (!statsPanel) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateStats();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(statsPanel);
+    return () => observer.disconnect();
+  }, []);
+
+  const animateStats = () => {
+    const duration = 2000;
+    const start = Date.now();
+
+    const animate = () => {
+      const now = Date.now();
+      const progress = Math.min((now - start) / duration, 1);
+
+      setStats({
+        count1: Math.floor(120 * progress),
+        count2: Math.floor(60 * progress)
+      });
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    animate();
+  };
 
 const handleShowRooms = () => {
   const key = prompt("Enter admin key:");
@@ -28,47 +66,8 @@ const handleShowRooms = () => {
 };
 
   return (
-    <div class>
-    <nav className="navbar-home">
-        <div className="logo-home">RoomEngine</div>
-
-        <div className="nav-links-home">
-            {!isLoggedIn?(
-                        <div className="hero-buttons">
-            <LoginIcon sx={{
-        color: '#22c55e',
-        '&:hover': {
-          backgroundColor: '#0f766e', 
-        },
-      }} onClick={() => navigate("/Login")}  />
-                            
-                        </div>
-                    ):(
-                        <div className="nav-links-home">
-                            <AccountCircleIcon sx={{
-        color: '#22c55e',
-        '&:hover': {
-          backgroundColor: '#0f766e', 
-        },
-      }} onClick={() => navigate("/Dashboard")}  />
-                            <LogoutIcon onClick={() => {
-                                localStorage.removeItem("studentId");
-                                setIsLoggedIn(false);
-                                navigate("/");
-                                window.location.reload();
-                            }} sx={{
-        color: '#22c55e',
-        '&:hover': {
-          backgroundColor: '#0f766e', 
-        },
-      }} />
-      
-                        </div>
-                      )
-            }
-            
-        </div>
-    </nav>
+    <div className="home-container">
+    <Header />
     <section className="hero">
   <div className="hero-left">
     <h1>Congratulations!!<br />You are selected for Hostel</h1>
@@ -107,12 +106,12 @@ const handleShowRooms = () => {
 
     <div className="stats-grid">
       <div className="stat-item">
-        <div className="stat-value">120+</div>
+        <div className="stat-value">{stats.count1}+</div>
         <div className="stat-label">students matched in our demo data</div>
       </div>
 
       <div className="stat-item">
-        <div className="stat-value">60%</div>
+        <div className="stat-value">{stats.count2}%</div>
         <div className="stat-label">projected drop in roommate conflicts</div>
       </div>
 
@@ -129,11 +128,11 @@ const handleShowRooms = () => {
   </div>
 </section>
 
-    <section class="steps">
+    <section className="steps">
     <h2>4 Steps to Your Perfect Flatmate</h2>
-    <div class="step">
-        <div class="step-number">01</div>
-        <div class="step-content">
+    <div className="step">
+        <div className="step-number">01</div>
+        <div className="step-content">
             <h3>Create Your Profile</h3>
             <p>
                 Sign up for free and tell us about yourself: your lifestyle, schedule,
@@ -141,7 +140,7 @@ const handleShowRooms = () => {
                 in a flatmate.
             </p>
 
-            <div class="tags">
+            <div className="tags">
                 <span>Set your budget range</span>
                 <span>Answer personality questions</span>
                 <span>Upload verified photo</span>
@@ -149,16 +148,16 @@ const handleShowRooms = () => {
             </div>
         </div>
     </div>
-    <div class="step">
-        <div class="step-number">02</div>
-        <div class="step-content">
+    <div className="step">
+        <div className="step-number">02</div>
+        <div className="step-content">
             <h3>Smart Matching</h3>
             <p>
                 Our algorithm analyzes compatibility factors to find flatmates
                 you'll actually enjoy living with.
             </p>
 
-            <div class="tags">
+            <div className="tags">
                 <span>Personality compatibility</span>
                 <span>Schedule alignment</span>
                 <span>Budget matching</span>
@@ -167,15 +166,15 @@ const handleShowRooms = () => {
         </div>
     </div>
 
-    <div class="step">
-        <div class="step-number">03</div>
-        <div class="step-content">
+    <div className="step">
+        <div className="step-number">03</div>
+        <div className="step-content">
             <h3>Connect & Chat</h3>
             <p>
                 Browse matches, see compatibility scores, and start chatting
                 with potential flatmates through secure messaging.
             </p>
-            <div class="tags">
+            <div className="tags">
                 <span>No Doubt</span>
                 <span>Schedule Meet</span>
                 <span>Planning</span>
@@ -185,55 +184,7 @@ const handleShowRooms = () => {
     </div>
 
 </section>
-    <footer className="footer">
-  <div className="footer-container">
-
-    <div className="footer-column">
-      <h3>Stay Connected</h3>
-      <div className="social-icons">
-        <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a href="https://www.youtube.com/yourchannel" target="_blank" rel="noopener noreferrer">YouTube</a>
-        <a href="https://www.linkedin.com/company/yourcompany" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </div>
-      <p>RoomEngine • Jamia Millia Islamia</p>
-    </div>
-
-    <div className="footer-column">
-      <h3>Navigate JMI</h3>
-      <ul>
-        <li><a href="https://jmi.ac.in">Official Website</a></li>
-        <li><a href="#">Courses & Programs</a></li>
-        <li><a href="#">Hostel Guidelines</a></li>
-        <li><a href="#">Campus Map</a></li>
-      </ul>
-    </div>
-
-    <div className="footer-column">
-      <h3>Resources</h3>
-      <ul>
-        <li><a href="#">FAQs</a></li>
-        <li><a href="#">Room Allocation Policies</a></li>
-        <li><a href="#">Payment Options</a></li>
-        <li><a href="#">Support Center</a></li>
-      </ul>
-    </div>
-
-    <div className="footer-column">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="#">Apply for Hostel</a></li>
-        <li><a href="#">Check Allocation Status</a></li>
-        <li><a href="#">Student Dashboard</a></li>
-        <li><a href="#">Admin Login</a></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div className="footer-bottom">
-    © 2026 RoomEngine • All Rights Reserved • Jamia Millia Islamia
-  </div>
-</footer>
+    <Footer />
     </div>
   );
 

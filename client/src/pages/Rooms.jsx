@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./rooms.css"
 import axios from "axios";
-import HomeIcon from '@mui/icons-material/Home';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import LogoutIcon from '@mui/icons-material/Logout';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function Rooms() {
   const navigate = useNavigate();
@@ -41,105 +40,50 @@ function Rooms() {
 
   return (
     <div>
-      <nav className="navbar-home">
-        <div className="logo-home">RoomEngine</div>
-        <div className="nav-links-home">
-          <HomeIcon sx={{
-        color: '#22c55e',
-        '&:hover': {
-          backgroundColor: '#0f766e',
-        },
-      }}
-            onClick={() => {
-              localStorage.setItem("step", "1");
-              navigate("/");
-            }}/>
-            <AccountCircleIcon sx={{
-        color: '#22c55e',
-        '&:hover': {
-          backgroundColor: '#0f766e',
-        },
-      }} onClick={() => navigate("/Dashboard")}  />
-      <LogoutIcon onClick={() => {
-                                localStorage.removeItem("studentId");
-                                navigate("/");
-                                window.location.reload();
-                            }} sx={{
-        color: '#22c55e',
-        '&:hover': {
-          backgroundColor: '#0f766e',
-        },
-      }} />
-          
-        </div>
-      </nav>
-    <div className="dash-body-best">
-    <div className="card-ro">
-      <h2>All Hostel Rooms</h2>
-
-      {rooms.map((room) => (
-        <div key={room._id}>
-          <h3>Room {room.roomNumber}</h3>
-          <ul style={{"list-style-type": "none"}}>
-            {room.students.map((student) => (
-              <li key={student._id}>{student.name}</li>
-            ))}
-          </ul>
-        </div>
-      ))}
-
-      <button className="primary-btn-home" style={{marginTop:"6px" , backgroundColor:"#B23B3B"}} onClick={handleExit}>Exit Admin</button>
-    </div>
-    </div>
-   <footer className="footer">
-  <div className="footer-container">
-
-    <div className="footer-column">
-      <h3>Stay Connected</h3>
-      <div className="social-icons">
-        <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a href="https://www.youtube.com/yourchannel" target="_blank" rel="noopener noreferrer">YouTube</a>
-        <a href="https://www.linkedin.com/company/yourcompany" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <Header />
+    <div className="rooms-container">
+      <div className="rooms-header">
+        <h2>All Hostel Rooms</h2>
+        <p className="rooms-subtitle">Total Rooms: {rooms.length}</p>
       </div>
-      <p>RoomEngine • Jamia Millia Islamia</p>
+
+      <div className="rooms-grid">
+        {rooms.map((room, index) => (
+          <div key={room._id} className="room-card" style={{ animationDelay: `${index * 0.1}s` }}>
+            <div className="room-header">
+              <div className="room-number">Room {room.roomNumber}</div>
+              <div className="room-badge">{room.students.length} Students</div>
+            </div>
+            <div className="students-list">
+              {room.students.map((student, idx) => (
+                <div key={student._id} className="student-item">
+                  <div className="student-avatar">{student.name.charAt(0).toUpperCase()}</div>
+                  <div className="student-info">
+                    <div className="student-name">{student.name}</div>
+                    {student.personalityType && (
+                      <div className="student-personality">{student.personalityType}</div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {rooms.length === 0 && (
+        <div className="no-rooms-message">
+          <p>No rooms assigned yet</p>
+        </div>
+      )}
+
+      <div className="admin-actions">
+        <button className="exit-admin-btn" onClick={handleExit}>
+          Exit Admin Panel
+        </button>
+      </div>
     </div>
-
-    <div className="footer-column">
-      <h3>Navigate JMI</h3>
-      <ul>
-        <li><a href="https://jmi.ac.in">Official Website</a></li>
-        <li><a href="#">Courses & Programs</a></li>
-        <li><a href="#">Hostel Guidelines</a></li>
-        <li><a href="#">Campus Map</a></li>
-      </ul>
-    </div>
-
-    <div className="footer-column">
-      <h3>Resources</h3>
-      <ul>
-        <li><a href="#">FAQs</a></li>
-        <li><a href="#">Room Allocation Policies</a></li>
-        <li><a href="#">Payment Options</a></li>
-        <li><a href="#">Support Center</a></li>
-      </ul>
-    </div>
-
-    <div className="footer-column">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="#">Apply for Hostel</a></li>
-        <li><a href="#">Check Allocation Status</a></li>
-        <li><a href="#">Student Dashboard</a></li>
-        <li><a href="#">Admin Login</a></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div className="footer-bottom">
-    © 2026 RoomEngine • All Rights Reserved • Jamia Millia Islamia
-  </div>
-</footer>
+   <Footer />
     </div>
   );
 }

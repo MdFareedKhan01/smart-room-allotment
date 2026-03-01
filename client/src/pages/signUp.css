@@ -128,12 +128,12 @@
 .card h2 {
   font-size: 1.75rem;
   font-weight: 700;
-  color: white;
+  color: #0f172a;
   margin-bottom: 0.5rem;
 }
 
 .card p {
-  color: white;
+  color: #6b7280;
   margin-bottom: 2.5rem;
   font-size: 0.95rem;
 }
